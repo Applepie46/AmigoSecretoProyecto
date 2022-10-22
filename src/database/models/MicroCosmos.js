@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "MicroCosmos"
+    let alias = "microcosmos"
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
 
     MicroCosmos.associate = (models) => {
 
-        MicroCosmos.hasMany(models.Gerencia, {
+        MicroCosmos.hasMany(models.gerencias, {
             as: 'gerencia',
             foreignKey: 'grupos_id'
         })
