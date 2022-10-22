@@ -17,7 +17,8 @@ const userController = {
             console.log();
             db.usuarios.create({
                 ...req.body,
-                contrasnia: req.body.contrasenia,
+                contrasnia: bcryptjs.compareSync(req.body.password, 10), 
+                // MODIFICAR: eliminar usuarios en db para registrar un usuario admin y otro de cliente
                 rolUsuario: 2
             })
             res.status(200).redirect('/users/login')
@@ -27,14 +28,7 @@ const userController = {
         res.render("login");
     },
     login: (req, res) => {
-<<<<<<< HEAD
-
-        console.log(req.body);
-
-=======
-        console.log(req.body);
->>>>>>> ad72df1b4e524ceab428be4b63d70f9bbda92571
-        db.Usuario.findOne({
+        db.usuarios.findOne({ // ERROR: No se estaba llamando bien el modelo es "usuarios" y decia "Usuario"
             where : { 
                 email : req.body.email
             }
@@ -56,7 +50,7 @@ const userController = {
                     }
                 }
             })
-        } )
+        })
     }
 
 };
