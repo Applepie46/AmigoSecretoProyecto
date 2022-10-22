@@ -11,6 +11,9 @@ router.get("perfil", (req, res) => {
 
 router.post("/login", userController.login);
 
+/*------PARA ENVIAR A LA DB------*/
+
+router.post("/register", userController.register)
 
 
 module.exports = router;

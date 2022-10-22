@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             notNull: true
         },
-        password: {
+        contrasenia: {
             type: dataTypes.STRING,
             notNull: true
         },
@@ -25,7 +25,20 @@ module.exports = (sequelize, dataTypes) => {
         },
         rolUsuario: {
             type: dataTypes.INTEGER,
-        }
+            field: 'rolUsuario'
+        },
+        gustos: {
+            type: dataTypes.STRING,
+            notNull: true
+        },
+        disgusto: {
+            type: dataTypes.STRING,
+            notNull: true
+        },
+        alegrias: {
+            type: dataTypes.STRING,
+            notNull: true
+        },
 
     }
 
