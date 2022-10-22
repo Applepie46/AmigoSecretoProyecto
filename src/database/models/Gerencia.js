@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
             as: 'gerencia',
             foreignKey: 'grupos_id'
         }),
-        Gerencia.hasmany(models.Usuario, {
+        Gerencia.hasMany(models.Usuario, {
             as: "grupo",
             foreignKey: "gerencias_id"
         })
