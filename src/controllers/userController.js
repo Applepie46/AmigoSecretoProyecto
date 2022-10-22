@@ -27,13 +27,7 @@ const userController = {
         res.render("login");
     },
     login: (req, res) => {
-<<<<<<< HEAD
-
         console.log(req.body);
-
-=======
-        console.log(req.body);
->>>>>>> ad72df1b4e524ceab428be4b63d70f9bbda92571
         db.Usuario.findOne({
             where : { 
                 email : req.body.email
