@@ -1,5 +1,6 @@
 const path = require('path');
 const db = require('../database/models');
+const bcryptjs = require('bcryptjs');
 
 const userController = {
 
@@ -18,6 +19,8 @@ const userController = {
     },
     login: (req, res) => {
 
+        console.log(req.body);
+
         db.Usuario.findOne({
             where : { 
                 email : req.body.email
@@ -29,11 +32,7 @@ const userController = {
                 let contraseñaCorrecta = bcryptjs.compareSync(req.body.password, userLog.password)
                 if (contraseñaCorrecta) {
                     req.session.usuarioLogueado = userLog;
-                   
-                    if (req.body.remember_user) {
-                        res.cookie("userEmail", req.body.email, { maxAge: (1000 * 60) * 60 });
-                    }
-    
+
                     return res.redirect('/user/perfil');
                 }
             }
