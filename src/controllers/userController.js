@@ -12,19 +12,49 @@ const userController = {
         })
     },
     register: (req, res) => {
-        try {
+        
+            console.log(req.body);
+            console.log();
             db.usuarios.create({
                 ...req.body,
-                contrasenia: bcryptjs.hashSync(req.body.password, 10),
+                contrasnia: req.body.contrasenia,
                 rolUsuario: 2
             })
             res.status(200).redirect('/users/login')
-        } catch (error) {
-            res.status(400).send('Usuario no creado')
-        }
+        
     },
     formLogin: (req, res) => {
         res.render("login");
+    },
+    login: (req, res) => {
+        console.log(req.body);
+        db.Usuario.findOne({
+            where : { 
+                email : req.body.email
+            }
+        })
+        .then(function (userLog){
+            
+            if (userLog) {
+                let contraseñaCorrecta = bcryptjs.compareSync(req.body.password, userLog.password)
+                if (contraseñaCorrecta) {
+                    req.session.usuarioLogueado = userLog;
+                   
+                    if (req.body.remember_user) {
+                        res.cookie("userEmail", req.body.email, { maxAge: (1000 * 60) * 60 });
+                    }
+    
+                    return res.redirect('/user/perfil');
+                }
+            }
+            return res.render('login', {
+                errors: {
+                    email: {
+                        msg: 'Usuario no valido'
+                    }
+                }
+            })
+        } )
     }
 
 };

@@ -6,5 +6,9 @@ router.get("/register", userController.formRegister);
 router.get("/login", userController.formLogin);
 
 
+/*------PARA ENVIAR A LA DB------*/
+
+router.post("/register", userController.register)
+
 
 module.exports = router;

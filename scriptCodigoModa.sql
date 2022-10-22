@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `codigoModa_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `codigoModa_db`;
+CREATE DATABASE  IF NOT EXISTS `railway` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `railway`;
 -- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: codigoModa_db
+-- Host: containers-us-west-108.railway.app    Database: railway
 -- ------------------------------------------------------
 -- Server version	8.0.31
 

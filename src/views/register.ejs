@@ -11,32 +11,48 @@
 <body>
 
     <section>
-        <form action="" method="POST">
+        <form action="/users/register" method="post">
             <div>
                 <label for="name">Nombre:</label>
                 <input name="nombre" type="text" id="name">
             </div>
+            <br>
             <div>
                 <label for="email">email:</label>
                 <input name="email" type="email" id="email">
             </div>
+            <br>
             <div>
                 <label for="password">contraseña:</label>
                 <input name="contrasenia" type="password" id="password">
             </div>
+            <br>
             <div>
-                <select name="gerencia" id="gerencia" class="control">
+                <select name="gerencias_id" id="gerencia" class="control">
                     <% for (let i=0; i < gerencias.length; i++) { %>
                         <option value="<%=gerencias[i].id%>">
                             <%=gerencias[i].nombre%>
                         </option>
-
                         <% } %>
                 </select>
             </div>
+            <br>
             <div>
-                <button type="submit">Guardar y enviar</button>
+                <label for="name">Gustos:</label>
+                <textarea name="gustos" type="text" id="name"></textarea>
             </div>
+            <br>
+            <div>
+                <label for="name">Disgustos:</label>
+                <textarea name="disgusto" type="text" id="name"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="name">Alegrias:</label>
+                <textarea name="alegrias" type="text" id="name"></textarea>
+            </div>
+            <br>
+                <input type="submit" value="enviar">
         </form>
     </section>
 
