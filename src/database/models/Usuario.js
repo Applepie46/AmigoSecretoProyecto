@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "Usuario"
     let cols = {
-        idUsuario: {
+        id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             notNull: true,
@@ -20,9 +20,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             notNull: true
         },
+        gerencias_id: {
+            type: dataTypes.INTEGER
+        },
         rolUsuario: {
             type: dataTypes.INTEGER,
-            notNull: true
         }
 
     }
@@ -30,15 +32,16 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: "usuarios",
         timestamps: false,
+        underscored: true
     };
 
     const Usuario = sequelize.define(alias, cols, config);
 
     Usuario.associate = (models) => {
 
-        Usuario.belongsTo(models, {
-            as: 'publisher',
-            foreignKey: 'publisher_id'
+        Usuario.belongsTo(models.Gerencia, {
+            as: 'gerencias',
+            foreignKey: 'gerencias_id'
         })
 
     }
