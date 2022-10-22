@@ -26,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const Gerencia = sequelize.define(alias, cols, config);
 
-    Gerencia.associate = (models) => {
+    Gerencia.associate = function(models){
 
         Gerencia.belongsTo(models.MicroCosmos, {
             as: 'gerencia',

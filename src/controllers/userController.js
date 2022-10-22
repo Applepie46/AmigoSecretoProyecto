@@ -4,9 +4,13 @@ const db = require('../database/models');
 const userController = {
 
     formRegister: (req, res) => {
-        res.render("register");
+        db.Gerencia.findAll()
+        .then((Gerencia) => {
+            res.render("register", {Gerencia})
+        })
     },
     register: (req, res) => {
+       
         return console.log(hola);
     },
     formLogin: (req, res) => {
