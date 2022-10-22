@@ -35,14 +35,6 @@ const userController = {
                     }
     
                     return res.redirect('/user/perfil');
-                } else {
-                    return res.render('login', {
-                        errors: {
-                            email: {
-                                msg: 'las credenciales no son validas'
-                            }
-                        }
-                    })
                 }
             }
             return res.render('login', {

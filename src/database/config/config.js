@@ -1,23 +1,23 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "ix5uhWeWu9KSt4J8SQwJ",
-    "database": "railway",
-    "host": "containers-us-west-108.railway.app",
+    "password": "",
+    "database": "codigomoda_db",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "ix5uhWeWu9KSt4J8SQwJ",
-    "database": "railway",
-    "host": "containers-us-west-108.railway.app",
+    "password": "",
+    "database": "codigomoda_db",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "ix5uhWeWu9KSt4J8SQwJ",
-    "database": "railway",
-    "host": "containers-us-west-108.railway.app",
+    "password": "",
+    "database": "codigomoda_db",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }
