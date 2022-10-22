@@ -1,58 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../stylesheets/style.css">
     <title>Document</title>
 </head>
+
 <body>
 
     <section>
         <form action="" method="POST">
             <div>
                 <label for="name">Nombre:</label>
-                <br>
-                <input type="text" id="name">
+                <input name="nombre" type="text" id="name">
             </div>
             <div>
                 <label for="email">email:</label>
-                <br>
-                <input type="email" id="email">
+                <input name="email" type="email" id="email">
             </div>
             <div>
                 <label for="password">contraseña:</label>
-                <br>
-                <input type="password" id="password">
+                <input name="contrasenia" type="password" id="password">
             </div>
             <div>
-                <select name="zone" id="zone">
-                    <option value="1">Recursos Humanos</option>
-                    <option value="2">Produccion</option>
-                    <option value="3">Logistica</option>
+                <select name="gerencia" id="gerencia" class="control">
+                    <% for (let i=0; i < Gerencia.length; i++) { %>
+                        <option value="<%=Gerencia[i].id%>">
+                            <%=Gerencia[i].tipoDeClima%>
+                        </option>
+
+                        <% } %>
                 </select>
-            </div>
-            <div>
-                <label for="likes">Cuales son tus gustos?</label>
-                <br>
-                <textarea name="likes" placeholder="Escribe aqui tus gustos" id="likes" cols="30" rows="10"></textarea>
-            </div>
-            <div>
-                <label for="dislike">Que te disgusta?</label>
-                <br>
-                <textarea name="dislike" id="dislike" cols="30" rows="10"></textarea>
-            </div>
-            <div>
-                <label for="happiness">Que te alegra?</label>
-                <br>
-                <textarea name="happines" id="happines" cols="30" rows="10"></textarea>
             </div>
             <div>
                 <button type="submit">Guardar y enviar</button>
             </div>
         </form>
     </section>
-    
+
 </body>
+
 </html>

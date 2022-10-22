@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
 
     MicroCosmos.associate = (models) => {
 
-        MicroCosmos.hasmany(models.Gerencia, {
+        MicroCosmos.hasMany(models.Gerencia, {
             as: 'gerencia',
             foreignKey: 'grupos_id'
         })

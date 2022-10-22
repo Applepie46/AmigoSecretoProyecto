@@ -26,13 +26,13 @@ module.exports = (sequelize, dataTypes) => {
 
     const Gerencia = sequelize.define(alias, cols, config);
 
-    Gerencia.associate = (models) => {
+    Gerencia.associate = function(models){
 
         Gerencia.belongsTo(models.MicroCosmos, {
             as: 'gerencia',
             foreignKey: 'grupos_id'
         }),
-        Gerencia.hasmany(models.Usuario, {
+        Gerencia.hasMany(models.Usuario, {
             as: "grupo",
             foreignKey: "gerencias_id"
         })
