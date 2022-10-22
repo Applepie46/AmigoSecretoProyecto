@@ -26,9 +26,9 @@
             </div>
             <div>
                 <select name="gerencia" id="gerencia" class="control">
-                    <% for (let i=0; i < Gerencia.length; i++) { %>
-                        <option value="<%=Gerencia[i].id%>">
-                            <%=Gerencia[i].tipoDeClima%>
+                    <% for (let i=0; i < gerencias.length; i++) { %>
+                        <option value="<%=gerencias[i].id%>">
+                            <%=gerencias[i].nombre%>
                         </option>
 
                         <% } %>

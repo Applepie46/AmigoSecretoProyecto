@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Gerencia"
+    let alias = "gerencias"
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tableName: "gerencia",
+        tableName: "gerencias",
         timestamps: false,
         underscored: true
     };
@@ -28,11 +28,11 @@ module.exports = (sequelize, dataTypes) => {
 
     Gerencia.associate = function(models){
 
-        Gerencia.belongsTo(models.MicroCosmos, {
-            as: 'gerencia',
+        Gerencia.belongsTo(models.microcosmos, {
+            as: 'gerencias',
             foreignKey: 'grupos_id'
         }),
-        Gerencia.hasMany(models.Usuario, {
+        Gerencia.hasMany(models.usuarios, {
             as: "grupo",
             foreignKey: "gerencias_id"
         })
