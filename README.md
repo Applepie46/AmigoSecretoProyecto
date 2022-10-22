@@ -1,5 +1,9 @@
 # AmigoSecretoProyecto
 
+Hola somos el equipo 4 estamos compuestos por =>
+- Emmanuel Cadavid Cano
+- Martin Andrey
+
 Que solucionamos con el proyecto?
 Con este proyecto solucionamos la construccion de equipos dinamicamente para actvidad ludica de la empresa
 
@@ -25,11 +29,12 @@ npm install
 
 Para correr el proyecto, lo podemos hacer con el siguiente comando =>
 
-npm start
+-npm start
 
 Si quieres correr el proyecto por medio de la ayuda de la libreria de nodemos para que al hacer un cambio en el codigo este se actualize automaticamente usamos el siguiente comando =>
 
-npm run dev
+-npm run dev
+
 
 
 
