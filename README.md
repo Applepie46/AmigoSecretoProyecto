@@ -5,6 +5,7 @@ Hola somos el equipo 4 estamos compuestos por =>
 - Martin Andrey
 
 Que solucionamos con el proyecto?
+
 Con este proyecto solucionamos la construccion de equipos dinamicamente para actvidad ludica de la empresa
 
 Guardado de datos
