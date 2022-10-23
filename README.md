@@ -5,6 +5,7 @@ Hola somos el equipo 4 estamos compuestos por =>
 - Martin Andrey
 
 Que solucionamos con el proyecto?
+
 Con este proyecto solucionamos la construccion de equipos dinamicamente para actvidad ludica de la empresa
 
 Guardado de datos
@@ -25,15 +26,15 @@ Primeros pasos para correr el proyecto =>
 
 Despues de clonar o descargar el proyecto debemos instalas las dependecias que este trae con el comendo =>
 
-npm install
+- npm install
 
 Para correr el proyecto, lo podemos hacer con el siguiente comando =>
 
--npm start
+- npm start
 
 Si quieres correr el proyecto por medio de la ayuda de la libreria de nodemos para que al hacer un cambio en el codigo este se actualize automaticamente usamos el siguiente comando =>
 
--npm run dev
+- npm run dev
 
 
 
