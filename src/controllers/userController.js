@@ -82,7 +82,6 @@ const userController = {
         Promise.all([listaUsuarios, usuarioEncontrado])
             .then(function ([usuarios, usuario]) {
                 const aleatorio1 = usuarios[Math.floor(Math.random() * usuarios.length)];
-                console.log(aleatorio1);
                 return res.render('perfil', { usuario, aleatorio1 });
             })
     }
