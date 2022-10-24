@@ -60,7 +60,7 @@ const userController = {
                     let contraseñaCorrecta = bcryptjs.compareSync(req.body.contrasenia, userLog.contrasenia)
                     if (contraseñaCorrecta) {
                         // req.session.usuarioLogueado = userLog;
-                        return res.redirect('/', { userLog });
+                        return res.render('prueba', { userLog });
                     }
                 }
                 return res.render('login', {
