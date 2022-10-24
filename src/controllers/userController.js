@@ -60,7 +60,7 @@ const userController = {
                     let contraseñaCorrecta = bcryptjs.compareSync(req.body.contrasenia, userLog.contrasenia)
                     if (contraseñaCorrecta) {
                         // req.session.usuarioLogueado = userLog;
-                        return res.redirect('/users/perfil');
+                        return res.redirect('/', { userLog });
                     }
                 }
                 return res.render('login', {
@@ -74,6 +74,17 @@ const userController = {
         } catch (error) {
             console.log(error);
         }
+    },
+    perfil: (req, res) => {
+        db.usuarios.findOne({
+            where: { id: req.params.id },
+        })
+        .then(function (usuarios) {
+            
+            res.render("perfil", {
+                usuario: usuarios
+            })
+        })
     }
 
 };

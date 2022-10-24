@@ -19,6 +19,12 @@
         <div>
           <a href="/users/login">Iniciar session</a>
         </div>
+        <p><%= userLog.id %></p>
+        <% if (userLog) { %>
+            <div>
+              <a href="/users/perfil/<%= userLog.id %>">Ver perfil</a>
+            </div>
+          <% } %>
       </div>
     </section>
   </main>

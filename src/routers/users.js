@@ -2,13 +2,12 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
 
+
+/*------AQUI RENDERISAMOS LAS VISTAS------*/
+
 router.get("/register", userController.formRegister);
 router.get("/login", userController.formLogin);
-
-router.get("/perfil", (req, res) => {
-    res.send("hola");
-})
-
+router.get("/perfil/:id", userController.perfil);
 
 /*------PARA ENVIAR A LA DB------*/
 
