@@ -40,7 +40,7 @@ Si quieres correr el proyecto por medio de la ayuda de la libreria de nodemos pa
 
 - ## GET
 
-*`/`
+--`/`
 
 Esta basicamente nos dirige a el index de la applicacion donde tenemos el menu de acceso
 
