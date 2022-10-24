@@ -38,7 +38,7 @@ Si quieres correr el proyecto por medio de la ayuda de la libreria de nodemos pa
 
 # Endpoints
 
-- ## GET
+## GET
 
 * `/`
 
