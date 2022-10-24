@@ -39,6 +39,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             notNull: true
         },
+        amigoSecreto: {
+            type: dataTypes.STRING,
+            notNull: true,
+            field: 'amigoSecreto'
+        },
 
     }
 

@@ -14,6 +14,7 @@ const userController = {
         console.log(req.body);  
         db.usuarios.findAll()
          .then(function(usuarios){
+            console.log(usuarios);
             if(usuarios.length > 0){
                 try {
                     db.usuarios.create({
