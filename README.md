@@ -13,9 +13,8 @@ Con este proyecto solucionamos la construccion de equipos dinamicamente para act
 El guardado de datos esta hecho dinamicamente con la tecnologia de sequelize y trabajamos con MYSQL
 
 aque tenemos el modelo relacional de la base de datos:
-![This is an image](https://github.com/Applepie46/AmigoSecretoProyecto/blob/master/public/images/modeloRelacional.png)
-- https://github.com/Applepie46/AmigoSecretoProyecto/blob/master/public/images/modeloRelacional.png
 
+![This is an image](https://github.com/Applepie46/AmigoSecretoProyecto/blob/master/public/images/modeloRelacional.png)
 
 Documentacion
 
