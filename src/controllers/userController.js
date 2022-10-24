@@ -12,17 +12,35 @@ const userController = {
     },
     register: (req, res) => {
         console.log(req.body);  
-        try {
-             db.usuarios.create({
-                ...req.body,
-                contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10), 
-                // MODIFICAR: eliminar usuarios en db para registrar un usuario admin y otro de cliente
-                rolUsuario: 2
-            })
-            res.status(200).redirect('/users/login')
-        } catch (error) {
-            console.log(error);
-        }
+        db.usuarios.findAll()
+         .then(function(usuarios){
+            if(usuarios.length > 0){
+                try {
+                    db.usuarios.create({
+                       ...req.body,
+                       contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10), 
+                       // MODIFICAR: eliminar usuarios en db para registrar un usuario admin y otro de cliente
+                       rolUsuario: 2
+                   })
+                   res.status(200).redirect('/users/login')
+               } catch (error) {
+                   console.log(error);
+               }
+            } else {
+                try {
+                    db.usuarios.create({
+                       ...req.body,
+                       contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10), 
+                       // MODIFICAR: eliminar usuarios en db para registrar un usuario admin y otro de cliente
+                       rolUsuario: 1
+                   })
+                   res.status(200).redirect('/users/login')
+               } catch (error) {
+                   console.log(error);
+               }
+            }
+         })
+        
            
         
     },
@@ -42,7 +60,6 @@ const userController = {
                     let contraseñaCorrecta = bcryptjs.compareSync(req.body.contrasenia, userLog.contrasenia)
                     if (contraseñaCorrecta) {
                         // req.session.usuarioLogueado = userLog;
-    
                         return res.redirect('/users/perfil');
                     }
                 }
