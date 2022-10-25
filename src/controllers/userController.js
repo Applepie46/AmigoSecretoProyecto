@@ -78,11 +78,19 @@ const userController = {
     },
     perfil: (req, res) => {
         let listaUsuarios = db.usuarios.findAll()
+        let listaFechas = db.fechas.findAll()
         let usuarioEncontrado = db.usuarios.findOne({ where: { id: req.params.id } })
-        Promise.all([listaUsuarios, usuarioEncontrado])
-            .then(function ([usuarios, usuario]) {
-                return res.render('perfil', { usuarios, usuario });
+        Promise.all([listaUsuarios, usuarioEncontrado, listaFechas])
+            .then(function ([usuarios, usuario, fechas]) {
+                return res.render('perfil', { usuarios, usuario, fechas });
             })
+    },
+    fecha: (req, res) => {
+        console.log(req.body)
+        db.fechas.create({
+            ...req.body
+        })
+        res.send('ok')
     }
 };
 
