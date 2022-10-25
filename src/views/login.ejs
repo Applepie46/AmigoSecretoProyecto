@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include("partials/head.ejs") %>
-    
-<body>
+<%- include("partials/head.ejs") %>
 
-    <section>
-        <form action="/users/login" method="post">
-            <div>
-                <label for="email">Correo electronico</label>
-                <input type="email" name="email" id="email">
+    <body>
+
+        <%- include("partials/header.ejs") %>
+
+            <main id="login-main" class="login-main">
+            <div class="title-login">
+                <h2 class="h2-register">Crea tu cuenta</h2>
             </div>
-            <div>
-                <label for="password">contraseña</label>
-                <input type="password" name="contrasenia" id="password">
-            </div>
-           
-            <input type="submit" value="enviar">
-        </form>
-    </section>
-    
-</body>
+            <section class="section-login">
+                <form action="/users/login" method="post">
+                    <div class="control-form">
+                        <label for="email">Correo electronico</label>
+                        <input type="email" placeholder="Escribe tu email" class="control" name="email" id="email">
+                    </div>
+                    <div class="control-form">
+                        <label for="password">contraseña</label>
+                        <input type="password" placeholder="Escribe tu contraseña" class="control" name="contrasenia"
+                            id="password">
+                    </div>
+                    <input class="btn-login" type="submit" value="Ingresar">
+                </form>
+            </section>
+            </main>
+    </body>
 </html>

@@ -1,22 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-  <%- include("partials/head.ejs") %>
-  
-<body>
-  <main>
-    <section>
-      <div>
-        <h1>Bienvenido</h1>
-        <div>
-          <a href="/users/register">Crear cuenta</a>
-        </div>
-        <div>
-          <a href="/users/login">Iniciar session</a>
-        </div>
-      </div>
-    </section>
-  </main>
-</body>
+<%- include("partials/head.ejs") %>
+
+  <body>
+    <%- include("partials/header.ejs") %>
+      <main class="index-main">
+        <section class="index-section">
+          <div class="title-div">
+            <h1 id="h1-index">Bienvenida/o</h1>
+          </div>
+          <div class="div-index">
+            <a class="index-a" href="/users/register">Crear cuenta</a>
+          </div>
+          <div class="div-index">
+            <a class="index-a" href="/users/login">Iniciar session</a>
+          </div>
+        </section>
+      </main>
+  </body>
+
 </html>

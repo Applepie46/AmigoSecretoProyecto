@@ -1,56 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include("partials/head.ejs") %>
+<%- include("partials/head.ejs") %>
 
-<body>
+    <body>
+        <%- include("partials/header.ejs") %>
+            <main id="register-main" class="register-main">
+                <div class="title-register">
+                    <h2 class="h2-register">Crea tu cuenta</h2>
+                </div>
+                <section class="section-register">
+                    <form action="/users/register" method="post">
+                        <div class="control-form">
+                            <label for="name">Nombre:</label>
+                            <input class="control" placeholder="Escribe tu nombre" name="nombre" type="text" id="name">
+                        </div>
 
-    <section>
-        <form action="/users/register" method="post">
-            <div>
-                <label for="name">Nombre:</label>
-                <input name="nombre" type="text" id="name">
-            </div>
-            <br>
-            <div>
-                <label for="email">email:</label>
-                <input name="email" type="email" id="email">
-            </div>
-            <br>
-            <div>
-                <label for="password">contraseña:</label>
-                <input name="contrasenia" type="password" id="password">
-            </div>
-            <br>
-            <div>
-                <select name="gerencias_id" id="gerencia" class="control">
-                    <% for (let i=0; i < gerencias.length; i++) { %>
-                        <option value="<%=gerencias[i].id%>">
-                            <%=gerencias[i].nombre%>
-                        </option>
-                        <% } %>
-                </select>
-            </div>
-            <br>
-            <div>
-                <label for="name">Gustos:</label>
-                <textarea name="gustos" type="text" id="name"></textarea>
-            </div>
-            <br>
-            <div>
-                <label for="name">Disgustos:</label>
-                <textarea name="disgusto" type="text" id="name"></textarea>
-            </div>
-            <br>
-            <div>
-                <label for="name">Alegrias:</label>
-                <textarea name="alegrias" type="text" id="name"></textarea>
-            </div>
-            <br>
-                <input type="submit" value="enviar">
-        </form>
-    </section>
+                        <div class="control-form">
+                            <label for="email">email:</label>
+                            <input class="control" placeholder="Escribe tu email" name="email" type="email" id="email">
+                        </div>
 
-</body>
+                        <div class="control-form">
+                            <label for="password">contraseña:</label>
+                            <input class="control" placeholder="Escribe tu contraseña" name="contrasenia"
+                                type="password" id="password">
+                        </div>
+
+                        <div class="control-form">
+                            <label for="gerencia">A que gerencia perteneces?</label>
+                            <select class="control" name="gerencias_id" id="gerencia" class="control">
+                                <% for (let i=0; i < gerencias.length; i++) { %>
+                                    <option value="<%=gerencias[i].id%>">
+                                        <%=gerencias[i].nombre%>
+                                    </option>
+                                    <% } %>
+                            </select>
+                        </div>
+
+                        <div class="control-form">
+                            <label for="name">Gustos:</label>
+                            <textarea class="control" placeholder="Escribe las cosas que te gustan" name="gustos"
+                                type="text" id="name"></textarea>
+                        </div>
+
+                        <div class="control-form">
+                            <label for="name">Disgustos:</label>
+                            <textarea class="control" placeholder="Escribe las cosas que te disgustan" name="disgusto"
+                                type="text" id="name"></textarea>
+                        </div>
+
+                        <div class="control-form">
+                            <label for="name">Alegrias:</label>
+                            <textarea class="control" placeholder="Escribe las cosas que te alegran" name="alegrias"
+                                type="text" id="name"></textarea>
+                        </div>
+                        <div class="btn-div">
+                            <input class="btn-register" type="submit" value="enviar">
+                        </div>
+                    </form>
+                </section>
+            </main>
+
+    </body>
 
 </html>
