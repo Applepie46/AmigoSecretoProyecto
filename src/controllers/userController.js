@@ -81,8 +81,7 @@ const userController = {
         let usuarioEncontrado = db.usuarios.findOne({ where: { id: req.params.id } })
         Promise.all([listaUsuarios, usuarioEncontrado])
             .then(function ([usuarios, usuario]) {
-                const aleatorio1 = usuarios[Math.floor(Math.random() * usuarios.length)];
-                return res.render('perfil', { usuario, aleatorio1 });
+                return res.render('perfil', { usuarios, usuario });
             })
     }
 };

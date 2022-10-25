@@ -6,12 +6,15 @@
 <body>
 
     <section>
-       <p>Bienvenido : <%= usuario.nombre %> </p>
+       <p>Bienvenido : <span class="nombreUsuario"><%= usuario.nombre %></span> </p>
        <p>Tu email: <%= usuario.email %> </p>
       <button class="btn">OPRIME AQUI</button>
       <div class="contenedorP"></div>
     </section>
-    <p class="aleatorio1"><%= aleatorio1.nombre  %> </p>
+    <% for( let i = 0; i < usuarios.length; i++ ) { %>
+        <p class="nombres" hidden><%= usuarios[i].nombre  %> </p>
+    <% } %>
+    <p class="amigoSecreto"></p>
     <script src="/js/perfil.js"></script>
 </body>
 </html>
