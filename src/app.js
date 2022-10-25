@@ -3,7 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const session = require("express-session");
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 var indexRouter = require('./routers/index');
 var usersRouter = require('./routers/users');
 
@@ -12,6 +13,17 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+// Midlewares
+
+app.use(session({
+  secret: "secreto",
+  resave: false,
+  saveUninitialized: false,
+}));
+
+app.use(userLoggedMiddleware);
+
 
 app.use(logger('dev'));
 app.use(express.json());

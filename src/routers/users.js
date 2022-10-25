@@ -1,15 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authtMiddleware = require("../middlewares/authMiddleware");
 
 
 /*------AQUI RENDERISAMOS LAS VISTAS------*/
 
-router.get("/register", userController.formRegister);
-router.get("/login", userController.formLogin);
-router.get("/perfil/:id", userController.perfil);
+router.get("/register", guestMiddleware, userController.formRegister);
+router.get("/login", guestMiddleware, userController.formLogin);
+router.get("/perfil", authtMiddleware, userController.perfil);
 
-/*------PARA ENVIAR A LA DB------*/
+/*------RUTA PARA REOMOVER USUARIO DE SESSION------*/
+
+router.get("/logout", userController.logout);
+
+
+/*------RUTAS DE GUARDADO DE DATOS------*/
 
 router.post("/register", userController.register)
 

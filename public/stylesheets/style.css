@@ -44,6 +44,16 @@ body {
   color: rgb(212, 205, 205);
 }
 
+.header-title a {
+  font-size: 40px;
+  color: rgb(212, 205, 205);
+  text-decoration: none;
+}
+
+.header-title a:hover {
+  color: rgb(212, 205, 205);
+}
+
 .bars-click {
   font-size: 30px;
   align-self: center;
@@ -55,6 +65,61 @@ body {
 
 .bars-click:hover {
   color: rgb(162, 156, 156);
+}
+
+.menuBox {
+  font-size: 13px;
+  visibility: hidden;
+  opacity: 0;
+  padding: 20px;
+  width: 100%;
+  position: absolute;
+  top: 1%;
+  right: 0;
+  left: 0;
+  z-index: 99;
+}
+
+#menuBox {
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  box-shadow: 0 0 15px #0000001a;
+  transition: all .5s ease-in-out;
+}
+
+.active2 {
+  visibility: visible;
+  opacity: 1;
+  top: 0%;
+}
+
+#menuBoxLinks {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightSideMenu {
+  text-align: right;
+  font-size: 15px;
+}
+
+.fa-window-close {
+  color: #343233;
+}
+
+.boxLinksUl {
+  list-style: none;
+}
+
+.boxLinksUl li {
+  margin-top: 12px;
+}
+
+.boxLinksUl a {
+  text-decoration: none;
+  color: #343233;
 }
 
 /* INDEX STYLES */

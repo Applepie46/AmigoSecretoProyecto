@@ -60,8 +60,9 @@ const userController = {
                     if (userLog) {
                         let contraseñaCorrecta = bcryptjs.compareSync(req.body.contrasenia, userLog.contrasenia)
                         if (contraseñaCorrecta) {
-                            // req.session.usuarioLogueado = userLog;
-                            return res.render('prueba', { userLog });
+                            req.session.usuarioLogueado = userLog;
+                            //return res.render('prueba', { userLog });
+                            return res.redirect("/users/perfil")
                         }
                     }
                     return res.render('login', {
@@ -77,12 +78,28 @@ const userController = {
         }
     },
     perfil: (req, res) => {
-        let listaUsuarios = db.usuarios.findAll()
+        console.log(req.session);
+        console.log("hola");
+        let anyEmail = req.session.usuarioLogueado.email
+        db.usuarios.findOne({
+            where: { email: anyEmail },
+        })
+        .then(function (usuarios) {
+            
+            res.render("perfil", {
+                usuarios
+            })
+        })
+        /*let listaUsuarios = db.usuarios.findAll()
         let usuarioEncontrado = db.usuarios.findOne({ where: { id: req.params.id } })
         Promise.all([listaUsuarios, usuarioEncontrado])
             .then(function ([usuarios, usuario]) {
                 return res.render('perfil', { usuarios, usuario });
-            })
+            })*/
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect("/");
     }
 };
 

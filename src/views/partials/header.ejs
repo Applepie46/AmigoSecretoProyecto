@@ -1,8 +1,52 @@
 <header class="header border-bottom border-danger">
-    <div class="right-side">
-        <p class="header-title">AmigoSecreto</p>
+  <div class="right-side">
+    <p class="header-title"><a href="/">AmigoSecreto</a></p>
+  </div>
+  <div class="left-side">
+    <a class="bars-click" href="#"><i class="fa-solid fa-bars"></i></a>
+  </div>
+  <% if (locals.isLogged) { %>
+  <div id="menuBox" class="menuBox">
+    <div id="menuBoxLinks">
+      <div class="rightSideMenu">
+        <a href="#" class="popOutButton"><i class="fas fa-window-close"></i></a>
+      </div>
+      <div class="leftSideMenu">
+        <ul class="boxLinksUl">
+          <li>
+            <a href="/">Inicio</a>
+          </li>
+          <li>
+            <a href="/users/perfil">Perfil</a>
+          </li>
+          <li>
+            <a href="/users/logout">Cerrar session</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="left-side">
-        <a class="bars-click" href=""><i class="fas fa-user-circle"></i></a>
+  </div>
+  <% } else { %>
+    <div id="menuBox" class="menuBox">
+      <div id="menuBoxLinks">
+        <div class="rightSideMenu">
+          <a href="#" class="popOutButton"><i class="fas fa-window-close"></i></a>
+        </div>
+        <div class="leftSideMenu">
+          <ul class="boxLinksUl">
+            <li>
+              <a href="/">Inicio</a>
+            </li>
+            <li>
+              <a href="/users/register">Registro</a>
+            </li>
+            <li>
+              <a href="/users/login">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+    <% } %>
 </header>
+<script src="/js/headerStyles.js"></script>
