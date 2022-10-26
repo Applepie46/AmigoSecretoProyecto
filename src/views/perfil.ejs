@@ -27,9 +27,9 @@
                     </p>
                     <% if (usuario.rolUsuario===1) { %>
                         <div>
-                            <h3>Establecer fechas</h3>
+                            <h3>Establecer fechas para amigo secreto</h3>
                             <form action="/users/perfil" method="post">
-                                <input type="text" name="id" value=<%=usuario.gerencias.id %>>
+                                <input type="text" hidden name="id" value=<%=usuario.gerencias.id %>>
                                 <label for="">Fecha de endulzada</label>
                                 <input type="date" name="fecha_endulzada">
                                 <label for="">Fecha de descubrimiento</label>
