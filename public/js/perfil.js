@@ -8,10 +8,15 @@ const nombreUsuario = document.querySelector('.nombreUsuario')
 const amigoSecreto = document.querySelector('.amigoSecreto')
 // ------ EVENTO QUE SE DA EN EL MOMENTO QUE SE LE DA CLICK AL BOTON CON LA CLASE 'btn' ------
 clickBtn.addEventListener('click', () => {
+    console.log('hjoa');
     // ------ VARIABLE EN DONDE SE VA A GUARDAR EL RESULTADO FINAL DEL AMIGO SECRETO ------
     let resultado
     // ------ OPERACION PARA BUSCAR UN NOMRE ALEATORIO EN LA BASE DE DATOS ------
+    console.log(nombres);
     const aleatorio1 = nombres[Math.floor(Math.random() * nombres.length)];
+    console.log(nombreUsuario.textContent.trim());
+    console.log(aleatorio1);
+    console.log(aleatorio1.textContent.trim());
     // ------ CONDICION PARA POR SI EL RESULTADO DEL AMIGO SECRETO ES EL MISMO NOMBRE DEL USUARIO REGISTRADO ( SE HACE NUEVAMENTE EL SORTEO Y SE GUARDA EN LA VARIABLE RESULTADO) ------
     if (nombreUsuario.textContent.trim() == aleatorio1.textContent.trim()) {
         const aleatorio2 = nombres[Math.floor(Math.random() * nombres.length)];

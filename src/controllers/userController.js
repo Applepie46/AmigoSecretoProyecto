@@ -41,9 +41,6 @@ const userController = {
                     }
                 }
             })
-
-
-
     },
     formLogin: (req, res) => {
         res.render("login");
@@ -78,46 +75,36 @@ const userController = {
         }
     },
     perfil: (req, res) => {
-<<<<<<< HEAD
         console.log(req.session);
         console.log("hola");
         let anyEmail = req.session.usuarioLogueado.email
-        db.usuarios.findOne({
-            where: { email: anyEmail },
-        })
-        .then(function (usuarios) {
-            
-            res.render("perfil", {
-                usuarios
-            })
-        })
-        /*let listaUsuarios = db.usuarios.findAll()
-        let usuarioEncontrado = db.usuarios.findOne({ where: { id: req.params.id } })
+        let listaUsuarios = db.usuarios.findAll()
+        let usuarioEncontrado = db.usuarios.findOne({ where: { email: anyEmail } })
         Promise.all([listaUsuarios, usuarioEncontrado])
             .then(function ([usuarios, usuario]) {
                 return res.render('perfil', { usuarios, usuario });
-            })*/
+            })
+        // db.usuarios.findOne({
+        //     where: { email: anyEmail },
+        // })
+        //     .then(function (usuarios) {
+        //         console.log(usuarios);
+        //         res.render("perfil", {
+        //             usuarios
+        //         })
+        //     })
     },
     logout: (req, res) => {
         req.session.destroy();
         return res.redirect("/");
-=======
-        let listaUsuarios = db.usuarios.findAll()
-        let listaFechas = db.fechas.findAll()
-        let usuarioEncontrado = db.usuarios.findOne({ where: { id: req.params.id } })
-        Promise.all([listaUsuarios, usuarioEncontrado, listaFechas])
-            .then(function ([usuarios, usuario, fechas]) {
-                return res.render('perfil', { usuarios, usuario, fechas });
-            })
-    },
-    fecha: (req, res) => {
-        console.log(req.body)
-        db.fechas.create({
-            ...req.body
-        })
-        res.send('ok')
->>>>>>> 89c4abdd68830d22dc8cb58602fa391c2538c230
     }
+    // fecha: (req, res) => {
+    //     console.log(req.body)
+    //     db.fechas.create({
+    //         ...req.body
+    //     })
+    //     res.redirect('/')
+    // }
 };
 
 module.exports = userController;
