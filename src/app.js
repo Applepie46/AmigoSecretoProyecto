@@ -1,7 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
+var cookies = require('cookie-parser');
 var logger = require('morgan');
 const session = require("express-session");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
@@ -28,7 +28,7 @@ app.use(userLoggedMiddleware);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookies());
 app.use(express.static("public"));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

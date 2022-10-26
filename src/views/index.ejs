@@ -10,12 +10,18 @@
           <div class="title-div">
             <h1 id="h1-index">Bienvenida/o</h1>
           </div>
-          <div class="div-index">
-            <a class="index-a" href="/users/register">Crear cuenta</a>
-          </div>
-          <div class="div-index">
-            <a class="index-a" href="/users/login">Iniciar session</a>
-          </div>
+          <% if (locals.isLogged) { %>
+            <div class="div-index">
+              <a class="index-a" href="/users/perfil">Perfil</a>
+            </div>
+          <% } else { %>  
+            <div class="div-index">
+              <a class="index-a" href="/users/register">Crear cuenta</a>
+            </div>
+            <div class="div-index">
+              <a class="index-a" href="/users/login">Iniciar session</a>
+            </div>
+          <% } %>  
         </section>
       </main>
   </body>

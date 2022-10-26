@@ -1,4 +1,4 @@
-const userLoggedMiddleware = (req, res, next) => {
+const userIndexMiddleware = (req, res, next) => {
     res.locals.isLogged = false;
 
     if (req.session && req.session.usuarioLogueado) {
@@ -10,4 +10,4 @@ const userLoggedMiddleware = (req, res, next) => {
     
 };
 
-module.exports = userLoggedMiddleware;
+module.exports = userIndexMiddleware;
