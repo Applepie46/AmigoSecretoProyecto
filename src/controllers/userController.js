@@ -75,11 +75,15 @@ const userController = {
         }
     },
     perfil: (req, res) => {
-        console.log(req.session);
-        console.log("hola");
         let anyEmail = req.session.usuarioLogueado.email
         let listaUsuarios = db.usuarios.findAll()
-        let usuarioEncontrado = db.usuarios.findOne({ where: { email: anyEmail } })
+        let usuarioEncontrado = db.usuarios.findOne({ 
+            where: { email: anyEmail },
+            include : { 
+                all: true,
+                nested: true 
+            }
+         })
         Promise.all([listaUsuarios, usuarioEncontrado])
             .then(function ([usuarios, usuario]) {
                 return res.render('perfil', { usuarios, usuario });
@@ -97,14 +101,18 @@ const userController = {
     logout: (req, res) => {
         req.session.destroy();
         return res.redirect("/");
+    },
+    fecha: (req, res) => {
+        console.log(req.body)
+        db.gerencias.update({
+            ...req.body
+        }, {
+            where: {
+                id: req.body.id,
+            }
+        })
+        res.redirect('/users/perfil')
     }
-    // fecha: (req, res) => {
-    //     console.log(req.body)
-    //     db.fechas.create({
-    //         ...req.body
-    //     })
-    //     res.redirect('/')
-    // }
 };
 
 module.exports = userController;

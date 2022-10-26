@@ -22,6 +22,6 @@ router.post("/register", userController.register)
 
 router.post("/login", userController.login);
 
-// router.post("/perfil/8", userController.fecha);
+router.post("/perfil", userController.fecha);
 
 module.exports = router;
