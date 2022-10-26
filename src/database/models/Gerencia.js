@@ -35,9 +35,11 @@ module.exports = (sequelize, dataTypes) => {
         Gerencia.hasMany(models.usuarios, {
             as: "grupo",
             foreignKey: "gerencias_id"
+        }),
+        Gerencia.hasOne(models.fechas, {
+            as: "fechas",
+            foreignKey: "id"
         })
-        
-
     }
 
     return Gerencia;
