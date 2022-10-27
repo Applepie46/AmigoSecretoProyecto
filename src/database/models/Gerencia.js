@@ -14,6 +14,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         grupos_id: {
             type: dataTypes.INTEGER
+        },
+        fecha_descubrimiento: {
+            type: dataTypes.DATE
+        },
+        fecha_endulzada: {
+            type: dataTypes.DATE
         }
 
     }
@@ -35,10 +41,6 @@ module.exports = (sequelize, dataTypes) => {
         Gerencia.hasMany(models.usuarios, {
             as: "grupo",
             foreignKey: "gerencias_id"
-        }),
-        Gerencia.hasOne(models.fechas, {
-            as: "fechas",
-            foreignKey: "id"
         })
     }
 

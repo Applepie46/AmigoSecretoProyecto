@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include("partials/head.ejs") %>
-    
-<body>
+<%- include("partials/head.ejs") %>
 
-    <%- include("partials/header.ejs") %>
-    
-    <section>
-       <p>Bienvenido : <span class="nombreUsuario"><%= usuarios.nombre %></span> </p>
-       <p>Tu email: <%= usuarios.email %> </p>
-      <button class="btn">OPRIME AQUI</button>
-      <div class="contenedorP"></div>
-    </section>
-    <% for( let i = 0; i < usuarios.length; i++ ) { %>
-        <p class="nombres" hidden><%= usuarios[i].nombre  %></p>
-    <% } %>
-    <p class="amigoSecreto"></p>
-    <% if (usuario.rolUsuario === 1) { %>
-     <div>
-        <h3>Establecer fechas</h3>
-        <form action="" method="post">
-        
-            <label for="">Fecha de endulzada</label>
-            <input type="date" name="fecha_endulzada">
-            <label for="">Fecha de descubrimiento</label>
-            <input type="date" name="fecha_descubrimiento">
-            <input type="submit">
-        
-        </form>
-     </div>
-    <% } %>
-    <script src="/js/perfil.js"></script>
-</body>
+    <body>
+
+        <%- include("partials/header.ejs") %>
+
+            <section>
+                <p>Bienvenido : <span class="nombreUsuario">
+                        <%= usuario.nombre %>
+                    </span> </p>
+                <p>Tu email: <%= usuario.email %>
+                </p>
+                <button class="btn">OPRIME AQUI</button>
+                <div class="contenedorP"></div>
+            </section>
+            <% for( let i=0; i < usuarios.length; i++ ) { %>
+                <p class="nombres" hidden>
+                    <%= usuarios[i].nombre %>
+                </p>
+                <% } %>
+                    <p class="amigoSecreto"></p>
+                    <p>
+                        <%= usuario.gerencias.nombre %>
+                    </p>
+                    <% if (usuario.rolUsuario===1) { %>
+                        <div>
+                            <h3>Establecer fechas para amigo secreto</h3>
+                            <form action="/users/perfil" method="post">
+                                <input type="text" hidden name="id" value=<%=usuario.gerencias.id %>>
+                                <label for="">Fecha de endulzada</label>
+                                <input type="date" name="fecha_endulzada">
+                                <label for="">Fecha de descubrimiento</label>
+                                <input type="date" name="fecha_descubrimiento">
+                                <input type="submit">
+                            </form>
+                        </div>
+                        <% } %>
+                            <script src="/js/perfil.js"></script>
+    </body>
+
 </html>

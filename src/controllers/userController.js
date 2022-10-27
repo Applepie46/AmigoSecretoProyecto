@@ -20,7 +20,6 @@ const userController = {
                         db.usuarios.create({
                             ...req.body,
                             contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10),
-                            // MODIFICAR: eliminar usuarios en db para registrar un usuario admin y otro de cliente
                             rolUsuario: 2
                         })
                         res.status(200).redirect('/users/login')
@@ -32,7 +31,6 @@ const userController = {
                         db.usuarios.create({
                             ...req.body,
                             contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10),
-                            // MODIFICAR: eliminar usuarios en db para registrar un usuario admin y otro de cliente
                             rolUsuario: 1
                         })
                         res.status(200).redirect('/users/login')
@@ -41,9 +39,6 @@ const userController = {
                     }
                 }
             })
-
-
-
     },
     formLogin: (req, res) => {
         res.render("login");
@@ -61,7 +56,6 @@ const userController = {
                         let contraseñaCorrecta = bcryptjs.compareSync(req.body.contrasenia, userLog.contrasenia)
                         if (contraseñaCorrecta) {
                             req.session.usuarioLogueado = userLog;
-                            //return res.render('prueba', { userLog });
                             return res.redirect("/users/perfil")
                         }
                     }
@@ -78,42 +72,35 @@ const userController = {
         }
     },
     perfil: (req, res) => {
-        console.log(req.session);
-        console.log("hola");
         let anyEmail = req.session.usuarioLogueado.email
-        db.usuarios.findOne({
+        let listaUsuarios = db.usuarios.findAll()
+        let usuarioEncontrado = db.usuarios.findOne({ 
             where: { email: anyEmail },
-        })
-        .then(function (usuarios) {
-            
-            res.render("perfil", {
-                usuarios
-            })
-        })
-        /*let listaUsuarios = db.usuarios.findAll()
-        let usuarioEncontrado = db.usuarios.findOne({ where: { id: req.params.id } })
+            include : { 
+                all: true,
+                nested: true 
+            }
+         })
         Promise.all([listaUsuarios, usuarioEncontrado])
             .then(function ([usuarios, usuario]) {
                 return res.render('perfil', { usuarios, usuario });
-            })*/
+            })
+        
     },
     logout: (req, res) => {
         req.session.destroy();
         return res.redirect("/");
-        let listaUsuarios = db.usuarios.findAll()
-        let listaFechas = db.fechas.findAll()
-        let usuarioEncontrado = db.usuarios.findOne({ where: { id: req.params.id } })
-        Promise.all([listaUsuarios, usuarioEncontrado, listaFechas])
-            .then(function ([usuarios, usuario, fechas]) {
-                return res.render('perfil', { usuarios, usuario, fechas });
-            })
     },
     fecha: (req, res) => {
         console.log(req.body)
-        db.fechas.create({
+        db.gerencias.update({
             ...req.body
+        }, {
+            where: {
+                id: req.body.id,
+            }
         })
-        res.send('ok')
+        res.redirect('/users/perfil')
     }
 };
 
