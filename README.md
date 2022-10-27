@@ -48,11 +48,16 @@ Si quieres correr el proyecto por medio de la ayuda de la libreria de nodemos pa
   
 * `/users/login`
   
-  Esta ruta renderiza el formulario de login donde el usuario puede ingresar la infomacion         previamente creada
+  Esta ruta renderiza el formulario de login donde el usuario puede ingresar la infomacion previamente creada
 
 * `/users/perfil`
 
-  Esta ruta nos renderiza el perfil de el usuario creado previamente, tambien esta ruta a parte   de renderizar el perfil del usuario nos trae la funcionalidad que permite conocer la persona     que le toco a el usuario como amigo secreto
+  Esta ruta nos renderiza el perfil de el usuario creado previamente, tambien esta ruta a parte de renderizar el perfil del usuario nos trae la funcionalidad que         permite conocer la persona que le toco a el usuario como amigo secreto
+    
+* `/users/admin`
+  
+  Esta ruta nos renderiza la vista que es exclusiva oara el administrador de un grupo, en esta el administrador puede registrar las fechas para las endulzadas y la       fecha para el descubrimiento
+  
   
 * `/users/logout`
 
@@ -62,15 +67,23 @@ Si quieres correr el proyecto por medio de la ayuda de la libreria de nodemos pa
 
 * `/users/register`
   
-  Esta ruta nos permite guardar los datos de los usuarios ingresados por medio de el formulario   de registro
+  Esta ruta nos permite guardar los datos de los usuarios ingresados por medio de el formulario de registro, esto se da por medio del llamado de la funcion
+  ¨register¨ que esta en el controlador userController
  
 * `/users/login`
 
-  Esta permite la validacion de los datos de el usuario en la base de datos para darle ingreso a   el perfil 
+  Esta permite la validacion de los datos de el usuario en la base de datos para darle ingreso a el perfil, esto se da por medio del llamado de la funcion
+  ¨login¨ que esta en el controlador userController
   
 * `/users/perfil`
 
-  Esta ruta le permite a un usuario administrador de la gerencia guardar las fechas de la         endulzada y de el descubrimiento de el amigo secreto
+  Esta ruta permite guardar el amigo secreto que fue asigando a un usuario a la base de datos de el proyecto, esto se da por medio del llamado de la funcion
+  ¨amigoSecreto¨ que esta en el controlador userController 
+  
+* `/users/fecha`
+  
+  Esta nos permite guardar y actualizar las fechas de las endulzadas y la fecha de el descubrimiento, esto se da por medio del llamado de la funcion
+  ¨fecha¨ que esta en el controlador userController  
   
 
 ## Notas a tener en cuenta:
