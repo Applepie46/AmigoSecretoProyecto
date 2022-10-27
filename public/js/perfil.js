@@ -1,5 +1,5 @@
 // ------ SE SELECCIONAN TODOS LOS ELEMENTOS NECESARIOS PARA HACER EL SORTEO DE EL AMIGO SECRETO ------
-const clickBtn = document.querySelector('.btn')
+const clickBtn = document.querySelector('.button')
 const aleatorio1 = document.querySelector('.aleatorio1')
 // ------ AQUI ESTAMOS TRAYEDO LOS NOMBRES DE LAS PERSONAS QUE HAY EN LA BASE DE DATOS POR CADA ------
 const nombres = document.querySelectorAll('.nombres')
