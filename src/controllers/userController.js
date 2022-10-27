@@ -20,7 +20,6 @@ const userController = {
                         db.usuarios.create({
                             ...req.body,
                             contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10),
-                            // MODIFICAR: eliminar usuarios en db para registrar un usuario admin y otro de cliente
                             rolUsuario: 2
                         })
                         res.status(200).redirect('/users/login')
@@ -32,7 +31,6 @@ const userController = {
                         db.usuarios.create({
                             ...req.body,
                             contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10),
-                            // MODIFICAR: eliminar usuarios en db para registrar un usuario admin y otro de cliente
                             rolUsuario: 1
                         })
                         res.status(200).redirect('/users/login')
@@ -58,7 +56,6 @@ const userController = {
                         let contraseñaCorrecta = bcryptjs.compareSync(req.body.contrasenia, userLog.contrasenia)
                         if (contraseñaCorrecta) {
                             req.session.usuarioLogueado = userLog;
-                            //return res.render('prueba', { userLog });
                             return res.redirect("/users/perfil")
                         }
                     }
@@ -88,15 +85,7 @@ const userController = {
             .then(function ([usuarios, usuario]) {
                 return res.render('perfil', { usuarios, usuario });
             })
-        // db.usuarios.findOne({
-        //     where: { email: anyEmail },
-        // })
-        //     .then(function (usuarios) {
-        //         console.log(usuarios);
-        //         res.render("perfil", {
-        //             usuarios
-        //         })
-        //     })
+        
     },
     logout: (req, res) => {
         req.session.destroy();
