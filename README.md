@@ -2,7 +2,7 @@
 
 Hola somos el equipo 4 estamos compuestos por =>
 - Emmanuel Cadavid Cano
-- Martin Andrey
+- Martin Andrey Sanchez
 
 Que solucionamos con el proyecto?
 
