@@ -16,13 +16,11 @@ aque tenemos el modelo relacional de la base de datos:
 
 ![This is an image](https://github.com/Applepie46/AmigoSecretoProyecto/blob/master/public/images/relationalModel/modeloRelacional2.png)
 
-Documentacion
+# Primeros pasos para correr el proyecto:
 
-Primeramente para el proyecto lo puedes clonar o descargar desde este repositorio con el siguiente link del proyecto =>
+Para empezar el proyecto lo puedes clonar o descargar desde este repositorio con el siguiente link del proyecto =>
 
 - https://github.com/Applepie46/AmigoSecretoProyecto.git
-
-# Primeros pasos para correr el proyecto:
 
 Despues de clonar o descargar el proyecto debemos instalas las dependecias que este trae con el comendo =>
 
