@@ -14,7 +14,7 @@ El guardado de datos esta hecho dinamicamente con la tecnologia de sequelize y t
 
 aque tenemos el modelo relacional de la base de datos:
 
-![This is an image](https://github.com/Applepie46/AmigoSecretoProyecto/blob/master/public/images/modeloRelacional.png)
+![This is an image](https://github.com/Applepie46/AmigoSecretoProyecto/blob/master/public/images/relationalModel/modeloRelacional2.png)
 
 Documentacion
 
@@ -42,14 +42,42 @@ Si quieres correr el proyecto por medio de la ayuda de la libreria de nodemos pa
 
 * `/`
 
-  Esta basicamente nos dirige a el index de la applicacion donde tenemos el menu de acceso
+  Esta basicamente nos renderiza el index de la applicacion donde tenemos el menu de acceso
 
 * `/users/register`
 
-  Esta nos dirige a el registro donde podremos insertar los datos para el ingreso de usuarios
+  Esta ruta renderiza el formulario de registro donde el usuario puede ingresar la informacion
   
-  **Nota**: Los usuarios administradores se crean automaticamente cuando un usuario es el primero en registrarse en un grupo y/o gerencia
+* `/users/login`
+  
+  Esta ruta renderiza el formulario de login donde el usuario puede ingresar la infomacion         previamente creada
 
+* `/users/perfil`
+
+  Esta ruta nos renderiza el perfil de el usuario creado previamente, tambien esta ruta a parte   de renderizar el perfil del usuario nos trae la funcionalidad que permite conocer la persona     que le toco a el usuario como amigo secreto
+  
+* `/users/logout`
+
+  Esta nos ayuda a remover el usuario de una session dado el caso que este se encuentra en una
+  
+## POST
+
+* `/users/register`
+  
+  Esta ruta nos permite guardar los datos de los usuarios ingresados por medio de el formulario   de registro
+ 
+* `/users/login`
+
+  Esta permite la validacion de los datos de el usuario en la base de datos para darle ingreso a   el perfil 
+  
+* `/users/perfil`
+
+  Esta ruta le permite a un usuario administrador de la gerencia guardar las fechas de la         endulzada y de el descubrimiento de el amigo secreto
+  
+
+## Notas a tener en cuenta:
+
+El primer usuario que se registre en un grupo de gerencia se convertira aoutomaticamente en administrador de el grupo teniendo acceso a el cambiado de fecha para la endulzada y fecha para el descubrimiento
 
 
 
