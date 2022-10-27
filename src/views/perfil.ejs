@@ -13,31 +13,32 @@
                     </span> </p>
                 <p>Tu email: <%= usuario.email %>
                 </p>
-                <button class="btn">OPRIME AQUI</button>
+                <% if (usuario.amigoSecreto === '') { %>
+                    <button class="btn">OPRIME AQUI</button>
+                <% } %>
                 <div class="contenedorP"></div>
             </section>
             <% for( let i=0; i < usuarios.length; i++ ) { %>
                 <% if (usuarios[i].nombre==usuario.nombre) { %>
                     <p class="error" hidden> Intentalo de nuevo </p>
-                    <% } else { %>
-                        <p class="nombre" hidden><%= usuarios[i].nombre %></p>
+                    <% } else if (usuario.gerencias_id == usuarios[i].gerencias_id ) { %>
                         <p class="nombres" hidden>
-                            Tu amigo secreto es: <b>
-                            <%= usuarios[i].nombre %></b>
-                            <b>Para darle su detalle ten en cuenta lo siguiente:</b>
-                            <b>1. Gustos :</b>
-                            <%= usuarios[i].gustos %>
-                            <b>2. Disgustos :</b>
-                            <%= usuarios[i].disgusto %>
-                            <b>3. Alegrias :</b>
-                            <%= usuarios[i].alegrias %>
+                            <b class="btnOcultar" hidden><%= usuarios[i].nombre %></b> ¡Es tu amigo secreto, felicidades! 
+                            Para darle su detalle ten en cuenta lo siguiente:
+                            1. Gustos :
+                            <b><%= usuarios[i].gustos %></b>
+                            2. Disgustos :
+                            <b><%= usuarios[i].disgusto %></b>
+                            3. Alegrias :
+                            <b><%= usuarios[i].alegrias %></b>
                         </p>
-                        <% } %>
+                        <% }     %>
                             <% } %>
                             <p class="amigoSecreto"></p>
                                 <form action="/users/perfil" class="form" method="post">
                                     <input type="text" hidden name="id" value=<%=usuario.id %>>
-                                    <input type="submit" class="inputForm" value="enviar">
+                                    <p class="mensaje btnOcultar">¡Genial! Para continuar por favor oprime el siguiente boton</p>
+                                    <input type="submit" class="inputForm" value="Guardar">
                                 </form>
                                 <p>
                                     <%= usuario.gerencias.nombre %>

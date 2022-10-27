@@ -13,7 +13,12 @@ body {
 .active {
   color: rgb(0, 0, 0);
   display:block;
+}
+
+.resaltado {
   font-weight: 700;
+  display: block ;
+  color: rgb(0, 255, 76);
 }
 
 .btn {

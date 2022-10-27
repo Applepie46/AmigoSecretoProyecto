@@ -121,7 +121,7 @@ const userController = {
                 id: req.body.id,
             }
         })
-        res.redirect('/users/perfil')
+        res.redirect('/')
     },
     admin: (req, res) => {
         let anyEmail = req.session.usuarioLogueado.email
