@@ -90,6 +90,15 @@ Si quieres correr el proyecto por medio de la ayuda de la libreria de nodemos pa
 
 El primer usuario que se registre en un grupo de gerencia se convertira aoutomaticamente en administrador de el grupo teniendo acceso a el cambiado de fecha para la endulzada y fecha para el descubrimiento
 
+# Usuario admin de prueba:
+correo: admin@gmail.com
+contraseña: admin
+# Usuario de prueba:
+correo: usuario@prueba.com
+contraseña: usuario
+
+
+
 
 
 

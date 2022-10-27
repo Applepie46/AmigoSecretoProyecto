@@ -16,16 +16,17 @@
                     <div class="control-form">
                         <label for="email">Correo electronico</label>
                         <input type="email" placeholder="Escribe tu email" class="control" name="email" id="email">
+                        <%if (locals.errors && errors.email) {%>
+                            <div class="text-danger">
+                                <%= errors.email.msg %>
+                            </div>
+                        <% } %>
                     </div>
                     <div class="control-form">
                         <label for="password">contraseña</label>
                         <input type="password" placeholder="Escribe tu contraseña" class="control" name="contrasenia"
                             id="password">
                     </div>
-                    <!--<div class="control-form">
-                        <label for="login-checkbox">Recordarme</label>
-                        <input type="checkbox" id="login-checkbox" class="login-checkbox" name="rememberUser">
-                    </div>-->
                     <div class="div_login-button">
                         <input class="btn" id="btn-login" type="submit" value="Ingresar">
                     </div>

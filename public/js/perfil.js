@@ -15,12 +15,12 @@ const mensaje2 = document.querySelector('.mensaje2')
 clickBtn.addEventListener('click', () => {
     // ------ OPERACION PARA BUSCAR UN NOMRE ALEATORIO EN LA BASE DE DATOS ------
     const aleatorio = nombres[Math.floor(Math.random() * nombres.length)];
-    console.log(aleatorio);
-    // ------ SE CAMBIAN LAS CLASES PARA QUE TODO SE VEA DE FORMA DIMANICA APARECIENDO Y DESAPARECIENDO PARA QUE TODO SE VEA MAS LIMPIO Y ORDENADO ------
+    // ------ SE LE AGREGA A AMIGO SECRETO EL RESULTADO DEL ALEATORIO ------
+    amigoSecreto.innerText = aleatorio.textContent.trim()
+    // ------ SE CAMBIAN LAS CLASES PARA QUE TODO SE VEA DE FORMA DIMANICA APARECIENDO Y DESAPARECIENDO Y ASI QUE TODO SEA MAS LIMPIO Y ORDENADO ------
     amigoSecreto.classList.add('active')
     input.classList.add('active')
     input.classList.remove('inputForm')
-    amigoSecreto.innerText = aleatorio.textContent.trim()
     clickBtn.classList.remove('btn')
     clickBtn.classList.add('btnOcultar')
     pregunta.classList.add('btnOcultar')

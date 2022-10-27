@@ -1,0 +1,82 @@
+/* INDEX STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Inter', sans-serif;
+  /*background-color: 	#1b1b1b;  */
+}
+
+body {
+  background-color: rgb(212, 205, 205);
+}
+
+.active {
+  color: rgb(0, 0, 0);
+  display:block;
+}
+
+.resaltado {
+  font-weight: 700;
+  display: block ;
+  color: rgb(104, 0, 0);
+}
+
+.resaltado2 {
+  font-weight: 700;
+  display: block ;
+  color: rgb(41, 41, 41);
+}
+
+.btn {
+  display: block;
+  transition: 1s;
+}
+
+.inputForm, .btnOcultar {
+  display:none;
+}
+
+
+.index-main {
+  background-color: rgb(212, 205, 205);
+  height: 100vh;
+}
+
+.index-section {
+  text-align: center;
+}
+
+.title-div {
+  padding: 20px;
+}
+
+#h1-index {
+  text-align: center;
+  margin: 0px auto;
+  width: 100%;
+  font-size: 50px;
+  color:#1b1b1b;
+}
+
+.div-index {
+  width: 100%;
+  padding: 20px;
+}
+
+.index-a {
+  width: 100%;
+  padding: 10px;
+  font-size: 40px;
+  border-radius: 35px;
+  text-decoration: none;
+  color: rgb(212, 205, 205);
+  background-color: #ff0808;
+  transition:
+    background-color, 0.5s color, 0.5s;
+}
+
+.index-a:hover {
+  background-color: #ef4646;
+  color: #1b1b1b;
+}

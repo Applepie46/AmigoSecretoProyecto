@@ -11,7 +11,6 @@ const userController = {
             })
     },
     register: (req, res) => {
-        console.log(req.body);
         db.usuarios.findAll()
             .then(function (usuarios) {
                 console.log(usuarios);
@@ -45,7 +44,7 @@ const userController = {
     },
     login: (req, res) => {
         try {
-            db.usuarios.findOne({ // ERROR: No se estaba llamando bien el modelo es "usuarios" y decia "Usuario"
+            db.usuarios.findOne({
                 where: {
                     email: req.body.email
                 }
@@ -85,7 +84,7 @@ const userController = {
             .then(function ([usuarios, usuario]) {
                 return res.render('perfil', { usuarios, usuario });
             })
-        
+
     },
     logout: (req, res) => {
         req.session.destroy();
@@ -102,7 +101,6 @@ const userController = {
         res.redirect('/users/perfil')
     },
     amigoSecreto: (req, res) => {
-        console.log(req.body)
         db.usuarios.update({
             ...req.body
         }, {
@@ -114,14 +112,16 @@ const userController = {
     },
     admin: (req, res) => {
         let anyEmail = req.session.usuarioLogueado.email
-         db.usuarios.findOne({
-            where: { email: anyEmail },
+        db.usuarios.findOne({
+            where: { 
+                email: anyEmail 
+            },
             include: {
                 all: true,
                 nested: true
             }
         })
-            .then(function(usuario) {
+            .then(function (usuario) {
                 res.render('admin', { usuario })
             })
     }

@@ -7,8 +7,8 @@
 
         <%- include("partials/header.ejs") %>
 
-            <section>
-                <div>
+            <main>
+                <section>
                     <h3>Establecer fechas para amigo secreto</h3>
                     <form action="/users/admin" method="post">
                         <input type="text" hidden name="id" value=<%=usuario.gerencias.id %>>
@@ -24,8 +24,8 @@
                             <input class="btn" id="btn" type="submit" value="Guardar">
                         </div>
                     </form>
-                </div> 
-            </section>
+                </section> 
+            </main>
         <script src="/js/perfil.js"></script>
     </body>
 

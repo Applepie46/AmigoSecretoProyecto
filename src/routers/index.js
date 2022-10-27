@@ -1,8 +1,8 @@
 const express = require('express');
 const indexController = require('../controllers/indexController');
 const router= express.Router();
-const userIndexMiddleware = require("../middlewares/userIndexMiddleware");
+const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware");
 
-router.get("/", userIndexMiddleware, indexController.index)
+router.get("/", userLoggedMiddleware, indexController.index)
 
 module.exports = router;

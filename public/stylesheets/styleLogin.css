@@ -1,0 +1,65 @@
+.login-main {
+    background-color: rgb(212, 205, 205);
+}
+
+.section-login {
+    margin-top: 20px;
+    width: 100%;
+    color: #1b1b1b;
+    background-color: rgb(212, 205, 205);
+    height: 100vh;
+}
+
+.div_login-button {
+    display: flex;
+    justify-content: center;
+}
+
+#btn-login {
+    width: 250px;
+    padding: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(212, 205, 205);
+    background-color: #ff0808;
+    border-color: #ff0808;
+    margin-top: 30px;
+    transition:
+        background-color, 0.5s color, 0.5s;
+}
+
+#btn-login:hover {
+    background-color: #ef4646;
+    color: #1b1b1b;
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* LOGIN */
+
+    #login-main {
+        margin: 0px auto;
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    .login-main {
+        background-color: rgb(212, 205, 205);
+        width: 470px;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-color: #e4f0f3;
+    }
+
+    .section-login {
+        height: 0%;
+    }
+
+    .title-login {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
