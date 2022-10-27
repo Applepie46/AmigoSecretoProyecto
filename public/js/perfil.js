@@ -13,15 +13,14 @@ const pregunta = document.querySelector('.pregunta')
 const mensaje2 = document.querySelector('.mensaje2')
 // ------ EVENTO QUE SE DA EN EL MOMENTO QUE SE LE DA CLICK AL BOTON CON LA CLASE 'btn' ------
 clickBtn.addEventListener('click', () => {
-    // ------ VARIABLE EN DONDE SE VA A GUARDAR EL RESULTADO FINAL DEL AMIGO SECRETO ------
     // ------ OPERACION PARA BUSCAR UN NOMRE ALEATORIO EN LA BASE DE DATOS ------
-    const aleatorio1 = nombres[Math.floor(Math.random() * nombres.length)];
-    console.log(aleatorio1);
-    // ------ CONDICION PARA POR SI EL RESULTADO DEL AMIGO SECRETO ES EL MISMO NOMBRE DEL USUARIO REGISTRADO ( SE HACE NUEVAMENTE EL SORTEO Y SE GUARDA EN LA VARIABLE RESULTADO) ------
+    const aleatorio = nombres[Math.floor(Math.random() * nombres.length)];
+    console.log(aleatorio);
+    // ------ SE CAMBIAN LAS CLASES PARA QUE TODO SE VEA DE FORMA DIMANICA APARECIENDO Y DESAPARECIENDO PARA QUE TODO SE VEA MAS LIMPIO Y ORDENADO ------
     amigoSecreto.classList.add('active')
     input.classList.add('active')
     input.classList.remove('inputForm')
-    amigoSecreto.innerText = aleatorio1.textContent.trim()
+    amigoSecreto.innerText = aleatorio.textContent.trim()
     clickBtn.classList.remove('btn')
     clickBtn.classList.add('btnOcultar')
     pregunta.classList.add('btnOcultar')
@@ -29,9 +28,10 @@ clickBtn.addEventListener('click', () => {
     mensaje.classList.add('resaltado')
     mensaje2.classList.remove('btnOcultar')
     mensaje2.classList.add('resaltado2')
+    // ------ SE LE AGREGA AL FORMULARIO EL INPUT CON EL VALOR DEL NOMBRE DEL AMIGO SECRETO QUE VIENE EN LA PRIMERA PALABRA DEL TEXTO DE LA OPERACION DE ALEATORIO ------
     form.innerHTML += `
     
-    <input type="text" hidden name="amigoSecreto" value=${aleatorio1.textContent}>
+    <input type="text" hidden name="amigoSecreto" value=${aleatorio.textContent}>
     
     `
 
