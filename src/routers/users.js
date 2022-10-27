@@ -9,6 +9,7 @@ const authtMiddleware = require("../middlewares/authMiddleware");
 
 router.get("/register", guestMiddleware, userController.formRegister);
 router.get("/login", guestMiddleware, userController.formLogin);
+router.get("/admin", authtMiddleware, userController.admin);
 router.get("/perfil", authtMiddleware, userController.perfil);
 
 /*------RUTA PARA REOMOVER USUARIO DE SESSION------*/
@@ -22,6 +23,8 @@ router.post("/register", userController.register)
 
 router.post("/login", userController.login);
 
-router.post("/perfil", userController.fecha);
+router.post("/admin", userController.fecha);
+
+router.post("/perfil", userController.amigoSecreto);
 
 module.exports = router;

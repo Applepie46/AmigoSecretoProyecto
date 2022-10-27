@@ -10,12 +10,19 @@ body {
   background-color: rgb(212, 205, 205);
 }
 
-.aleatorio1 {
-  display: none;
+.active {
+  color: rgb(0, 0, 0);
+  display:block;
+  font-weight: 700;
 }
 
-.active-aleatorio {
+.btn {
   display: block;
+  transition: 1s;
+}
+
+.inputForm, .btnOcultar {
+  display:none;
 }
 
 /* ESTILOS HEADER */

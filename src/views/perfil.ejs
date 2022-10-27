@@ -17,28 +17,37 @@
                 <div class="contenedorP"></div>
             </section>
             <% for( let i=0; i < usuarios.length; i++ ) { %>
-                <p class="nombres" hidden>
-                    <%= usuarios[i].nombre %>
-                </p>
-                <% } %>
-                    <p class="amigoSecreto"></p>
-                    <p>
-                        <%= usuario.gerencias.nombre %>
-                    </p>
-                    <% if (usuario.rolUsuario===1) { %>
-                        <div>
-                            <h3>Establecer fechas para amigo secreto</h3>
-                            <form action="/users/perfil" method="post">
-                                <input type="text" hidden name="id" value=<%=usuario.gerencias.id %>>
-                                <label for="">Fecha de endulzada</label>
-                                <input type="date" name="fecha_endulzada">
-                                <label for="">Fecha de descubrimiento</label>
-                                <input type="date" name="fecha_descubrimiento">
-                                <input type="submit">
-                            </form>
-                        </div>
+                <% if (usuarios[i].nombre==usuario.nombre) { %>
+                    <p class="error" hidden> Intentalo de nuevo </p>
+                    <% } else { %>
+                        <p class="nombre" hidden><%= usuarios[i].nombre %></p>
+                        <p class="nombres" hidden>
+                            Tu amigo secreto es: <b>
+                            <%= usuarios[i].nombre %></b>
+                            <b>Para darle su detalle ten en cuenta lo siguiente:</b>
+                            <b>1. Gustos :</b>
+                            <%= usuarios[i].gustos %>
+                            <b>2. Disgustos :</b>
+                            <%= usuarios[i].disgusto %>
+                            <b>3. Alegrias :</b>
+                            <%= usuarios[i].alegrias %>
+                        </p>
                         <% } %>
-                            <script src="/js/perfil.js"></script>
+                            <% } %>
+                            <p class="amigoSecreto"></p>
+                                <form action="/users/perfil" class="form" method="post">
+                                    <input type="text" hidden name="id" value=<%=usuario.id %>>
+                                    <input type="submit" class="inputForm" value="enviar">
+                                </form>
+                                <p>
+                                    <%= usuario.gerencias.nombre %>
+                                </p>
+                                <% if (usuario.rolUsuario===1) { %>
+
+                                    <a href="/users/admin">Opciones admin</a>
+                                    
+                                    <% } %>
+                                        <script src="/js/perfil.js"></script>
     </body>
 
 </html>

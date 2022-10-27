@@ -77,13 +77,13 @@ const userController = {
     perfil: (req, res) => {
         let anyEmail = req.session.usuarioLogueado.email
         let listaUsuarios = db.usuarios.findAll()
-        let usuarioEncontrado = db.usuarios.findOne({ 
+        let usuarioEncontrado = db.usuarios.findOne({
             where: { email: anyEmail },
-            include : { 
+            include: {
                 all: true,
-                nested: true 
+                nested: true
             }
-         })
+        })
         Promise.all([listaUsuarios, usuarioEncontrado])
             .then(function ([usuarios, usuario]) {
                 return res.render('perfil', { usuarios, usuario });
@@ -103,8 +103,18 @@ const userController = {
         return res.redirect("/");
     },
     fecha: (req, res) => {
-        console.log(req.body)
         db.gerencias.update({
+            ...req.body
+        }, {
+            where: {
+                id: req.body.id
+            }
+        })
+        res.redirect('/users/perfil')
+    },
+    amigoSecreto: (req, res) => {
+        console.log(req.body)
+        db.usuarios.update({
             ...req.body
         }, {
             where: {
@@ -112,6 +122,19 @@ const userController = {
             }
         })
         res.redirect('/users/perfil')
+    },
+    admin: (req, res) => {
+        let anyEmail = req.session.usuarioLogueado.email
+         db.usuarios.findOne({
+            where: { email: anyEmail },
+            include: {
+                all: true,
+                nested: true
+            }
+        })
+            .then(function(usuario) {
+                res.render('admin', { usuario })
+            })
     }
 };
 

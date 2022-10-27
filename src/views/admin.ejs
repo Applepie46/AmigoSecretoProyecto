@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("partials/head.ejs") %>
+
+    <body>
+
+        <%- include("partials/header.ejs") %>
+
+            <section>
+                <div>
+                    <h3>Establecer fechas para amigo secreto</h3>
+                    <form action="/users/admin" method="post">
+                        <input type="text" hidden name="id" value=<%=usuario.gerencias.id %>>
+                        <label for="">Fecha de endulzada</label>
+                        <input type="date" name="fecha_endulzada">
+                        <label for="">Fecha de descubrimiento</label>
+                        <input type="date" name="fecha_descubrimiento">
+                        <input type="submit">
+                    </form>
+                </div> 
+            </section>
+        <script src="/js/perfil.js"></script>
+    </body>
+
+</html>
