@@ -1,55 +1,72 @@
 .main-profile {
-    background-color: rgb(212, 205, 205);
-    height: 100vh;
-  }
-  
-  .profile-section {
-    padding-top: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .info-user-text {
-    margin: 0px;
-  }
-  
-  .div-button {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  #btn {
-    width: 200px;
-    padding: 3px;
-    font-size: 20px;
-    text-decoration: none;
-    color: rgb(212, 205, 205);
-    background-color: #ff0808;
-    border-color: #ff0808;
-    transition:
-      background-color, 0.5s color, 0.5s;
-  }
-  
-  #btn:hover {
-    background-color: #ef4646;
-    color: #1b1b1b;
-  }
-  
-  .admin-option {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .fecha_endulzada {
-    background-color: rgb(212, 205, 205);
-    border-style: none;
-  }
-  
-  .fecha_descubrimiento {
-    background-color: rgb(212, 205, 205);
-    border-style: none;
-  }
-  
+  background-color: rgb(212, 205, 205);
+  height: 100vh;
+  padding: 20px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-profile section {
+  margin: 20px;
+}
+
+.info-user-text {
+  margin: 0px;
+}
+
+.div-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#btn {
+  width: 200px;
+  padding: 3px;
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(212, 205, 205);
+  background-color: #ff0808;
+  border-color: #ff0808;
+  transition:
+    background-color, 0.5s color, 0.5s;
+}
+
+#btn:hover {
+  background-color: #ef4646;
+  color: #1b1b1b;
+}
+
+.admin-option {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.fecha_endulzada {
+  background-color: rgb(212, 205, 205);
+  border-style: none;
+}
+
+.fecha_descubrimiento {
+  background-color: rgb(212, 205, 205);
+  border-style: none;
+}
+
+.btnFechas{
+  text-decoration: none;
+  color: rgb(0, 0, 0);  
+  transition: 1s;
+  border-bottom: 1px solid #fff;
+  padding: 8px 5px;
+}
+
+.btnFechas:hover {
+  border-radius: 15px;
+  padding: 8px 40px;
+  color: #fff;  
+  background-color: red;
+
+}

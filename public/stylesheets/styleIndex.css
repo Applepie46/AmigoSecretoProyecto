@@ -13,18 +13,18 @@ body {
 
 .active {
   color: rgb(0, 0, 0);
-  display:block;
+  display: block;
 }
 
 .resaltado {
   font-weight: 700;
-  display: block ;
+  display: block;
   color: rgb(104, 0, 0);
 }
 
 .resaltado2 {
   font-weight: 700;
-  display: block ;
+  display: block;
   color: rgb(41, 41, 41);
 }
 
@@ -33,14 +33,20 @@ body {
   transition: 1s;
 }
 
-.inputForm, .btnOcultar {
-  display:none;
+.inputForm,
+.btnOcultar {
+  display: none;
 }
 
 
 .index-main {
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
   background-color: rgb(212, 205, 205);
-  height: 100vh;
+  background-image: url('../images/Facebook\ post\ -\ 1.png');
+  background-repeat: no-repeat;
+  height: 95vh;
 }
 
 .index-section {
@@ -56,7 +62,7 @@ body {
   margin: 0px auto;
   width: 100%;
   font-size: 50px;
-  color:#1b1b1b;
+  color: #1b1b1b;
 }
 
 .div-index {
@@ -66,17 +72,26 @@ body {
 
 .index-a {
   width: 100%;
-  padding: 10px;
-  font-size: 40px;
+  padding: 8px 20px;
+  font-size: 18px;
   border-radius: 35px;
   text-decoration: none;
-  color: rgb(212, 205, 205);
+  color: rgb(255, 255, 255);
   background-color: #ff0808;
   transition:
-    background-color, 0.5s color, 0.5s;
+    background-color, 1s color, 1s;
 }
 
 .index-a:hover {
+  padding: 8px 40px;
   background-color: #ef4646;
-  color: #1b1b1b;
+  color: #020202;
+}
+
+@media only screen and (max-width: 780px) {
+
+  .index-main {
+    background-image: url('../images/backgroundAmigoSecreto.png');
+  }
+
 }
