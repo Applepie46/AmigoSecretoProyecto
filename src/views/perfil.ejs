@@ -9,7 +9,7 @@
             <main class="main-profile">
 
 
-                <section>
+                <section class="primerSection">
                     <p class="info-user-text"><strong>Bienvenida/o:</strong></p>
                     <p class="info-user-text">
                         <%= usuario.nombre %>
@@ -25,49 +25,58 @@
                         <%= usuario.gerencias.nombre %>
                     </p>
                     <br>
+                </section>
+                <section class="segundoSection">
                     <% if (usuario.amigoSecreto==='' ) { %>
                         <p class="pregunta"><strong>¿Quieres saber quien sera tu amigo secreto?</strong></p>
                         <button id="btn" class="btn button">OPRIME AQUI</button>
                         <% } else { %>
 
-                            Tu amigo secreto es: <strong><%= usuario.amigoSecreto %></strong>
+                            Tu amigo secreto es: <strong>
+                                <%= usuario.amigoSecreto %>
+                            </strong>
 
-                        <% } %> 
-                            <div class="contenedorP"></div>
-                </section>
-                <% for( let i=0; i < usuarios.length; i++ ) { %>
-                    <% if (usuarios[i].nombre==usuario.nombre) { %>
-                        <p class="error" hidden> Intentalo de nuevo </p>
-                        <% } else if (usuario.gerencias_id==usuarios[i].gerencias_id ) { %>
-                            <p class="nombres" hidden>
-                                <b class="btnOcultar" hidden><%= usuarios[i].nombre %></b> ¡Es tu amigo secreto, felicidades!
-                                Para darle su detalle ten en cuenta lo siguiente:
-                                1. Gustos :
-                                <b><%= usuarios[i].gustos %></b>
-                                2. Disgustos :
-                                <b><%= usuarios[i].disgusto %></b>
-                                3. Alegrias :
-                                <b><%= usuarios[i].alegrias %></b>
-                                <p class="mensaje2 btnOcultar"><strong>Guarda muy bien la informacion de tu amigo secreto, ¡nos vemos pronto!</strong></p>
-                            </p>
                             <% } %>
-                                <% } %>
-                                    <p class="amigoSecreto"></p>
-                                    <form action="/users/perfil" class="form" method="post">
-                                        <input type="text" hidden name="id" value=<%=usuario.id %>>
-                                        <p class="mensaje btnOcultar">¡Genial! Para continuar por favor oprime el
-                                            siguiente boton</p>
-                                        <input type="submit" class="inputForm" value="Aceptar">
-                                    </form>
-                                    <% if (usuario.rolUsuario===1) { %>
+                                <div class="contenedorP"></div>
+                                <% for( let i=0; i < usuarios.length; i++ ) { %>
+                                    <% if (usuarios[i].nombre==usuario.nombre) { %>
+                                        <p class="error" hidden> Intentalo de nuevo </p>
+                                        <% } else if (usuario.gerencias_id==usuarios[i].gerencias_id ) { %>
+                                            <p class="nombres" hidden>
+                                                <%= usuarios[i].nombre %> ¡Es tu amigo secreto, felicidades!
+                                                    Para darle su detalle ten en cuenta lo siguiente:
+                                                    1. Gustos :
+                                                    <%= usuarios[i].gustos %>
+                                                        2. Disgustos :
+                                                        <%= usuarios[i].disgusto %>
+                                                            3. Alegrias :
+                                                            <%= usuarios[i].alegrias %>
+                                                                <p class="mensaje2 btnOcultar"><strong>Guarda muy bien
+                                                                        la informacion de tu
+                                                                        amigo secreto, ¡nos vemos pronto!</strong></p>
+                                            </p>
+                                            <% } %>
+                                                <% } %>
+                                                    <p class="amigoSecreto"></p>
+                                                    <form action="/users/perfil" class="form" method="post">
+                                                        <input type="text" hidden name="id" value=<%=usuario.id %>>
+                                                        <p class="mensaje btnOcultar">¡Genial! Para continuar por favor
+                                                            oprime el
+                                                            siguiente boton</p>
+                                                        <input type="submit" class="inputForm btnPerfil"
+                                                            value="Aceptar">
+                                                    </form>
+                                                    <% if (usuario.rolUsuario===1) { %>
 
-                                        <a href="/users/admin">Cambiar fechas</a>
+                                                        <a class="btnPerfil" href="/users/admin">Cambiar fechas</a>
 
-                                        <% } %>
-                                            <script src="/js/perfil.js"></script>
-
+                                                        <% } %>
+                                                            <script src="/js/perfil.js"></script>
+                </section>
             </main>
             <script src="/js/perfil.js"></script>
+            <script src="/js/cache.js"></script>
+
     </body>
 
 </html>

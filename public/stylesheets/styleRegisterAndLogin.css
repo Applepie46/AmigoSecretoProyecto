@@ -44,20 +44,22 @@
   }
   
   #btn-register {
-    width: 250px;
-    padding: 5px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     text-decoration: none;
-    color: rgb(212, 205, 205);
     background-color: #ff0808;
     border-color: #ff0808;
     margin-bottom: 30px;
     transition:
-      background-color, 0.5s color, 0.5s;
+      background-color, 1s color, 1s;
   }
   
   #btn-register:hover {
+    padding: 8px 40px;
     background-color: #ef4646;
+<<<<<<< HEAD
     color: #1b1b1b;
   }
 
@@ -125,3 +127,7 @@
             background-color, 0.5s color, 0.5s;
     }
 }  
+=======
+    color: #000000;
+  }
+>>>>>>> 9c5ab0a37865a6a8cf48daeec157a9c78353077b
