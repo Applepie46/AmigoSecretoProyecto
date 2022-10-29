@@ -60,3 +60,68 @@
     background-color: #ef4646;
     color: #1b1b1b;
   }
+
+  @media only screen and (min-width: 768px) {
+
+    /* REGISTRO */
+
+    #register-main {
+        margin: 0px auto;
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    .control-form label {
+        margin-bottom: 5px;
+        font-style: italic;
+        display: block;
+    }
+
+    .control {
+        color: #1b1b1b;
+        background-color: rgb(212, 205, 205);
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom: 1px solid #1b1b1b;
+        outline: none;
+        padding: 8px;
+        width: 100%;
+    }
+
+    .register-main {
+        background-color: rgb(212, 205, 205);
+        width: 470px;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-color: #e4f0f3;
+    }
+
+    .btn-div {
+        margin-top: 40px;
+    }
+
+    .section-register {
+        height: 0%;
+    }
+
+    .title-register {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .btn-register {
+        width: 100%;
+        padding: 5px;
+        font-size: 20px;
+        border-radius: 35px;
+        text-decoration: none;
+        color: rgb(212, 205, 205);
+        background-color: #ff0808;
+        transition:
+            background-color, 0.5s color, 0.5s;
+    }
+}  
