@@ -44,15 +44,16 @@
                                         <% } else if (usuario.gerencias_id==usuarios[i].gerencias_id ) { %>
                                             <p class="nombres" hidden>
                                                 <%= usuarios[i].nombre %> ¡Es tu amigo secreto, felicidades!
-                                                Para darle su detalle ten en cuenta lo siguiente:
-                                                1. Gustos :
-                                                <%= usuarios[i].gustos %>
-                                                2. Disgustos :
-                                                <%= usuarios[i].disgusto %>
-                                                3. Alegrias :
-                                                <%= usuarios[i].alegrias %>
-                                            <p class="mensaje2 btnOcultar"><strong>Guarda muy bien la informacion de tu
-                                                    amigo secreto, ¡nos vemos pronto!</strong></p>
+                                                    Para darle su detalle ten en cuenta lo siguiente:
+                                                    1. Gustos :
+                                                    <%= usuarios[i].gustos %>
+                                                        2. Disgustos :
+                                                        <%= usuarios[i].disgusto %>
+                                                            3. Alegrias :
+                                                            <%= usuarios[i].alegrias %>
+                                                                <p class="mensaje2 btnOcultar"><strong>Guarda muy bien
+                                                                        la informacion de tu
+                                                                        amigo secreto, ¡nos vemos pronto!</strong></p>
                                             </p>
                                             <% } %>
                                                 <% } %>
@@ -62,7 +63,8 @@
                                                         <p class="mensaje btnOcultar">¡Genial! Para continuar por favor
                                                             oprime el
                                                             siguiente boton</p>
-                                                        <input type="submit" class="inputForm btnPerfil" value="Aceptar">
+                                                        <input type="submit" class="inputForm btnPerfil"
+                                                            value="Aceptar">
                                                     </form>
                                                     <% if (usuario.rolUsuario===1) { %>
 
@@ -73,6 +75,8 @@
                 </section>
             </main>
             <script src="/js/perfil.js"></script>
+            <script src="/js/cache.js"></script>
+
     </body>
 
 </html>
