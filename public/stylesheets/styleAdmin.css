@@ -1,0 +1,75 @@
+.main-admin {
+    background-color: rgb(212, 205, 205);
+    height: 100vh;
+    padding: 20px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-section input{
+    margin-top: 5px;
+}
+
+.admin-title {
+    margin-bottom: 20px;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fecha_endulzada {
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: rgb(212, 205, 205);
+    margin-top: 30px;
+    transition:
+        background-color, 1s color, 1s;
+}
+
+.fecha_endulzada:hover {
+    background-color: #c9bbbb;
+    color: #000000;
+}
+
+.fecha_descubrimiento {
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: rgb(212, 205, 205);
+    margin-top: 30px;
+    transition:
+        background-color, 1s color, 1s;
+}
+
+.fecha_descubrimiento:hover {
+    background-color: #c9bbbb;
+    color: #000000;
+}
+
+#btn-admin {
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-decoration: none;
+    background-color: #ff0808;
+    border-color: #ff0808;
+    margin-top: 30px;
+    transition:
+        background-color, 1s color, 1s;
+}
+
+#btn-admin:hover {
+    padding: 8px 40px;
+    background-color: #ef4646;
+    color: #1b1b1b;
+}
+

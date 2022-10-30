@@ -7,21 +7,21 @@
 
         <%- include("partials/header.ejs") %>
 
-            <main>
-                <section>
-                    <h3>Establecer fechas para amigo secreto</h3>
+            <main class="main-admin">
+                <section class="admin-section">
+                    <h3 class="admin-title"><strong>Establecer fechas para amigo secreto</strong></h3>
                     <form action="/users/admin" method="post">
                         <input type="text" hidden name="id" value=<%=usuario.gerencias.id %>>
-                        <div>
-                            <label for="">Fecha de endulzada:</label>
+                        <div class="form-inputs">
+                            <label for=""> <strong>Fecha de endulzada:</strong></label>
                             <input class="fecha_endulzada" type="date" name="fecha_endulzada">
                         </div>
-                        <div>
-                            <label for="">Fecha de descubrimiento:</label>
+                        <div class="form-inputs">
+                            <label for=""><strong>Fecha de descubrimiento:</strong></label>
                             <input class="fecha_descubrimiento" type="date" name="fecha_descubrimiento">
                         </div>
                         <div class="div-button">
-                            <input class="btn" id="btn" type="submit" value="Guardar">
+                            <input class="btn" id="btn-admin" type="submit" value="Guardar">
                         </div>
                     </form>
                 </section> 
