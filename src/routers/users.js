@@ -3,17 +3,22 @@ const router = express.Router();
 const userController = require("../controllers/userController");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authtMiddleware = require("../middlewares/authMiddleware");
+const apicache = require('apicache')
+
+
+const cache = apicache.middleware;
+
 
 
 /*------   AQUI RENDERISAMOS LAS VISTAS   ------*/
 
 router.get("/register", guestMiddleware, userController.formRegister);
 
-router.get("/login", guestMiddleware, userController.formLogin);
+router.get("/login", cache('2 minutes') ,guestMiddleware, userController.formLogin);
 
 router.get("/admin", authtMiddleware, userController.admin);
 
-router.get("/perfil", authtMiddleware, userController.perfil);
+router.get("/perfil", cache('2 minutes'), authtMiddleware, userController.perfil);
 
 /*------  RUTA PARA REOMOVER USUARIO DE SESSION  ------*/
 
