@@ -1,6 +1,7 @@
 .header {
     width: 100%;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     justify-content: space-between;
     background-color: #1b1b1b;
@@ -18,12 +19,13 @@
   }
   
   .header-title {
+    margin-bottom: 0%;
     font-size: 40px;
     color: rgb(212, 205, 205);
   }
   
   .header-title a {
-    font-size: 40px;
+    font-size: 30px;
     color: rgb(212, 205, 205);
     text-decoration: none;
   }
@@ -33,7 +35,7 @@
   }
   
   .bars-click {
-    font-size: 30px;
+    font-size: 25px;
     align-self: center;
     text-decoration: none;
     color: rgb(212, 205, 205);
