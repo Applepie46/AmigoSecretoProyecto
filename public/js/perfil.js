@@ -8,11 +8,17 @@ const nombres = document.querySelectorAll('.nombres')
 const nombreUsuario = document.querySelector('.nombreUsuario')
 const amigoSecreto = document.querySelector('.amigoSecreto')
 const input = document.querySelector('.inputForm')
+const mensajeDeNoHayNadieEnDb = document.querySelector('.mensajeDeNoHayNadieEnDb')
+const cajitaDeEnviado = document.querySelector('.cajitaDeEnviado')
 const mensaje = document.querySelector('.mensaje')
 const pregunta = document.querySelector('.pregunta')
 const mensaje2 = document.querySelector('.mensaje2')
-// ------ EVENTO QUE SE DA EN EL MOMENTO QUE SE LE DA CLICK AL BOTON CON LA CLASE 'btn' ------
+// ------ EVENTO QUE SE DA EN EL MOMENTO QUE SE LE DA CLICK AL BOTON CON LA CLASE 'button' ------
 clickBtn.addEventListener('click', () => {
+    // ------ MENSAJE QUE SE MUESTRA EN CASO DE QUE SOLO EL LIDER ESTE EN LA GERENCIA ------
+    if (nombres.length === 0) {
+        mensajeDeNoHayNadieEnDb.innerText = 'Aun no hay nadie en esta gerencia'
+    }
     // ------ OPERACION PARA BUSCAR UN NOMRE ALEATORIO EN LA BASE DE DATOS ------
     const aleatorio = nombres[Math.floor(Math.random() * nombres.length)];
     // ------ SE LE AGREGA A AMIGO SECRETO EL RESULTADO DEL ALEATORIO ------
@@ -26,6 +32,7 @@ clickBtn.addEventListener('click', () => {
     pregunta.classList.add('btnOcultar')
     mensaje.classList.remove('btnOcultar')
     mensaje.classList.add('resaltado')
+    cajitaDeEnviado.classList.remove('btnOcultar')
     mensaje2.classList.remove('btnOcultar')
     mensaje2.classList.add('resaltado2')
     // ------ SE LE AGREGA AL FORMULARIO EL INPUT CON EL VALOR DEL NOMBRE DEL AMIGO SECRETO QUE VIENE EN LA PRIMERA PALABRA DEL TEXTO DE LA OPERACION DE ALEATORIO ------
@@ -34,5 +41,4 @@ clickBtn.addEventListener('click', () => {
     <input type="text" hidden name="amigoSecreto" value=${aleatorio.textContent}>
     
     `
-
 })

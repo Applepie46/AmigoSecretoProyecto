@@ -11,9 +11,12 @@ const userController = {
             })
     },
     register: (req, res) => {
-        db.usuarios.findAll()
+        db.usuarios.findAll({
+            where: {
+                gerencias_id: req.body.gerencias_id
+            }
+        })
             .then(function (usuarios) {
-                console.log(usuarios);
                 if (usuarios.length > 0) {
                     try {
                         db.usuarios.create({
@@ -81,7 +84,6 @@ const userController = {
         })
         Promise.all([listaUsuarios, usuarioEncontrado])
             .then(function ([usuarios, usuario]) {
-                console.log(usuarios);
                 return res.render('perfil', { usuarios, usuario });
             })
 
@@ -113,8 +115,8 @@ const userController = {
     admin: (req, res) => {
         let anyEmail = req.session.usuarioLogueado.email
         db.usuarios.findOne({
-            where: { 
-                email: anyEmail 
+            where: {
+                email: anyEmail
             },
             include: {
                 all: true,

@@ -1,8 +1,6 @@
-CREATE DATABASE  IF NOT EXISTS `codigomoda_db_1` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `codigomoda_db_1`;
 -- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: codigomoda_db_1
+-- Host: 127.0.0.1    Database: railway
 -- ------------------------------------------------------
 -- Server version	8.0.30
 
@@ -42,7 +40,7 @@ CREATE TABLE `gerencias` (
 
 LOCK TABLES `gerencias` WRITE;
 /*!40000 ALTER TABLE `gerencias` DISABLE KEYS */;
-INSERT INTO `gerencias` VALUES (1,'Gerencia de logistica',1,'2022-08-10 00:00:00','2022-07-05 00:00:00'),(2,'Gerencia de industrial',1,NULL,NULL),(3,'Gerencia de marcas y mercadeo',4,NULL,NULL),(4,'Gerencia de compras',4,NULL,NULL),(5,'Gerencia de tecnologia',2,NULL,NULL),(6,'Gerencia legal',2,NULL,NULL),(7,'Gerencia de servicios compartidos',2,NULL,NULL),(8,'Gerencia de desarrollo organizional',2,NULL,NULL),(9,'Grencia digital',3,NULL,NULL),(10,'Gerencia de nuevos negocios',3,NULL,NULL);
+INSERT INTO `gerencias` VALUES (1,'Gerencia de logistica',1,'2022-01-06 00:00:00','2023-01-11 00:00:00'),(2,'Gerencia de industrial',1,NULL,NULL),(3,'Gerencia de marcas y mercadeo',4,NULL,NULL),(4,'Gerencia de compras',4,NULL,NULL),(5,'Gerencia de tecnologia',2,NULL,NULL),(6,'Gerencia legal',2,NULL,NULL),(7,'Gerencia de servicios compartidos',2,NULL,NULL),(8,'Gerencia de desarrollo organizional',2,NULL,NULL),(9,'Grencia digital',3,NULL,NULL),(10,'Gerencia de nuevos negocios',3,NULL,NULL);
 /*!40000 ALTER TABLE `gerencias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +89,7 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`id`),
   KEY `fk_usuarios_gerencias1_idx` (`gerencias_id`),
   CONSTRAINT `fk_usuarios_gerencias1` FOREIGN KEY (`gerencias_id`) REFERENCES `gerencias` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +98,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (8,'admin','admin@gmail.com','$2a$10$kjcG90OdHC.6Lk20GfK8yO0TQn0iqduxIJgabHjdm9vubn0P34gSC',1,1,'admin','admin','admin','prueba2'),(9,'usuario','usuario@prueba.com','$2a$10$2LeMFMHvhOkv8wl1KhBgmud5ZGKU5EaYz//1CwtQb75l8NEW.fZU6',1,2,'usuario','usuario','usuario',''),(10,'hola','hola@hola.com','$2a$10$EU1PxmxnvfZ6fj0qgogc0un7X0zS1Eq6vY7ueZt8i5ysnwp1qJWkC',1,2,'hola','hola','hola',NULL),(11,'prueba1','holag@hola.com','$2a$10$EU1PxmxnvfZ6fj0qgogc0un7X0zS1Eq6vY7ueZt8i5ysnwp1qJWkC',1,2,'hola','hola','hola',NULL),(12,'prueba2','holap1@hola.com','$2a$10$EU1PxmxnvfZ6fj0qgogc0un7X0zS1Eq6vY7ueZt8i5ysnwp1qJWkC',1,2,'hola','hola','hola',NULL),(13,'prueba3','holap2@hola.com','$2a$10$EU1PxmxnvfZ6fj0qgogc0un7X0zS1Eq6vY7ueZt8i5ysnwp1qJWkC',1,2,'hola','hola','hola',NULL),(14,'prueba4','holap3@hola.com','$2a$10$EU1PxmxnvfZ6fj0qgogc0un7X0zS1Eq6vY7ueZt8i5ysnwp1qJWkC',1,2,'hola','hola','hola',NULL);
+INSERT INTO `usuarios` VALUES (20,'admin','admin@admin.com','$2a$10$kmIYZ1gClPV8t.JmoTuBueH0oRepbhPW51ogpaFZCbkbjxEsL7xZC',1,1,'hola','hola','hola',NULL),(22,'prueba','prueba@gmail.com','$2a$10$h3Q.du7wvEz4qAja0AXQZOoXYvtlPLvW1mHrJgbPdVWbPaY8Kmaga',1,2,'joaj','ohj','oj',NULL),(33,'Martin Sanchez ','sanchezmartin2435@gmail.com','$2a$10$iqezDlcwFR75sARfaToQQuaeS8g2JzKb6.d0DFAqLISmt5I9w0DJ6',5,1,'jhgafx','kjbk','jvbk',NULL),(34,'Martin Sanchez ','maxtin123@hotmail.com','$2a$10$TfnkUa9NfQH0.2pkp/NTROAStKskWyOtOU1/YacmoQ.8dvw5mPHUS',3,1,'ab','jkh','h',NULL),(35,' maria','admin@admin.com','$2a$10$FBg35xgsqS4ql.uRiYjAPOM8RuK3A0hD6wxB/UU7ZBFbyoYU80A.W',10,1,'ambjkjab','kjb','kjb',NULL),(36,'prueba','admin@hoa.com','$2a$10$9FPaDTU2cgIvGJDRkgLTaOiPFB9YnDo8y7eR3Tojz8R/22TXt5rFq',1,2,'jkah','hljhg','kjg',NULL),(37,' martin','admin@sjhv.com','$2a$10$b6HzrZhZnkE/zt1mmC3suubiBJ2ya6MMbrZAnxHhyd.6HJSMG6Ubm',1,2,'jhgvjh','vhv','k',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -113,4 +111,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-27 10:29:42
+-- Dump completed on 2022-11-02 17:30:46

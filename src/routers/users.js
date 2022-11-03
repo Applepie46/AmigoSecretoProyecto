@@ -3,6 +3,11 @@ const router = express.Router();
 const userController = require("../controllers/userController");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authtMiddleware = require("../middlewares/authMiddleware");
+const apicache = require('apicache')
+
+
+const cache = apicache.middleware;
+
 
 
 /*------   AQUI RENDERISAMOS LAS VISTAS   ------*/
@@ -28,6 +33,6 @@ router.post("/login", userController.login);
 
 router.post("/admin", userController.fecha);
 
-router.post("/perfil", userController.amigoSecreto);
+router.post("/perfil", cache('2 minutes'), userController.amigoSecreto);
 
 module.exports = router;

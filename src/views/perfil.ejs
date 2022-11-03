@@ -29,6 +29,7 @@
                 <section class="segundoSection">
                     <% if (usuario.amigoSecreto===null ) { %>
                         <p class="pregunta"><strong>¿Quieres saber quien sera tu amigo secreto?</strong></p>
+                        <p class="mensajeDeNoHayNadieEnDb"></p>
                         <button id="btn" class="btn button">OPRIME AQUI</button>
                         <% } else { %>
 
@@ -47,24 +48,26 @@
                                                     Para darle su detalle ten en cuenta lo siguiente:
                                                     1. Gustos :
                                                     <%= usuarios[i].gustos %>
-                                                        2. Disgustos :
-                                                        <%= usuarios[i].disgusto %>
-                                                            3. Alegrias :
-                                                            <%= usuarios[i].alegrias %>
-                                                                <p class="mensaje2 btnOcultar"><strong>Guarda muy bien
-                                                                        la informacion de tu
-                                                                        amigo secreto, ¡nos vemos pronto!</strong></p>
+                                                    2. Disgustos :
+                                                    <%= usuarios[i].disgusto %>
+                                                    3. Alegrias :
+                                                    <%= usuarios[i].alegrias %>
+                                                    <p class="mensaje2 btnOcultar"><strong>Guarda muy bien
+                                                    la informacion de tu
+                                                    amigo secreto, ¡nos vemos pronto!</strong></p>
                                             </p>
                                             <% } %>
                                                 <% } %>
                                                     <p class="amigoSecreto"></p>
                                                     <form action="/users/perfil" class="form" method="post">
                                                         <input type="text" hidden name="id" value=<%=usuario.id %>>
+                                                        <div class="cajitaDeEnviado btnOcultar">
                                                         <p class="mensaje btnOcultar">¡Genial! Para continuar por favor
                                                             oprime el
                                                             siguiente boton</p>
-                                                        <input type="submit" class="inputForm btnPerfil"
+                                                            <input type="submit" class="inputForm btnPerfil"
                                                             value="Aceptar">
+                                                        </div>
                                                     </form>
                                                     <% if (usuario.rolUsuario===1) { %>
 
@@ -74,8 +77,7 @@
                                                             <script src="/js/perfil.js"></script>
                 </section>
             </main>
-            <%- include("partials/script.ejs") %>
-
+            <script src="/js/perfil.js"></script>
     </body>
 
 </html>
