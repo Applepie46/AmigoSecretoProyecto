@@ -7,7 +7,7 @@ const session = require("express-session");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const indexRouter = require('./routers/index');
 const usersRouter = require('./routers/users');
-const apicache = require('apicache')
+const apicache = require('apicache');
 
 const app = express();
 const cache = apicache.middleware;
@@ -23,7 +23,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }));
-app.use(cache('2 minutes'))
+app.use(cache('2 minutes'));
 app.use(userLoggedMiddleware);
 
 
