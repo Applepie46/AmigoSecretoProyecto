@@ -59,16 +59,30 @@
   text-decoration: none;
   color: rgb(0, 0, 0);  
   transition: 1s;
-  background-color:  rgb(212, 205, 205);
+  background-color:rgb(212, 205, 205);
   border-style: none;
-  border-bottom: 1px solid #fff;
-  padding: 8px 5px;
+  border-radius: 15px;
+  padding: 8px 15px;
 }
 
-.btnPerfil:hover {
+.btnPerfil:hover{
   background-color: red;
   border-radius: 15px;
   padding: 8px 40px;
   color: #fff;  
+}
 
+.cajitaDeEnviado {
+  border:1px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  padding: 8px 40px;
+  color: #fff;
+  padding: 30px;
+  margin:20px 0px;
+}
+
+.mensajeDeNoHayNadieEnDb {
+  color: #ff0808;
+  font-weight: 700;
+  font-size: 20px;
 }

@@ -14,11 +14,11 @@ const cache = apicache.middleware;
 
 router.get("/register", guestMiddleware, userController.formRegister);
 
-router.get("/login", cache('2 minutes') ,guestMiddleware, userController.formLogin);
+router.get("/login", guestMiddleware, userController.formLogin);
 
 router.get("/admin", authtMiddleware, userController.admin);
 
-router.get("/perfil", cache('2 minutes'), authtMiddleware, userController.perfil);
+router.get("/perfil", authtMiddleware, userController.perfil);
 
 /*------  RUTA PARA REOMOVER USUARIO DE SESSION  ------*/
 
@@ -33,6 +33,6 @@ router.post("/login", userController.login);
 
 router.post("/admin", userController.fecha);
 
-router.post("/perfil", userController.amigoSecreto);
+router.post("/perfil", cache('2 minutes'), userController.amigoSecreto);
 
 module.exports = router;
