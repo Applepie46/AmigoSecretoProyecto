@@ -1,6 +1,6 @@
 .main-profile {
   background-color: rgb(212, 205, 205);
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   font-size: 22px;
   display: flex;
@@ -85,4 +85,10 @@
   color: #ff0808;
   font-weight: 700;
   font-size: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+.main-profile {
+  flex-direction: column;
+}
 }
