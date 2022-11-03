@@ -50,7 +50,6 @@ const userController = {
                 }
             })
                 .then(function (userLog) {
-
                     if (userLog) {
                         let contraseñaCorrecta = bcryptjs.compareSync(req.body.contrasenia, userLog.contrasenia)
                         if (contraseñaCorrecta) {
@@ -82,6 +81,7 @@ const userController = {
         })
         Promise.all([listaUsuarios, usuarioEncontrado])
             .then(function ([usuarios, usuario]) {
+                console.log(usuarios);
                 return res.render('perfil', { usuarios, usuario });
             })
 

@@ -27,7 +27,7 @@
                     <br>
                 </section>
                 <section class="segundoSection">
-                    <% if (usuario.amigoSecreto==='' ) { %>
+                    <% if (usuario.amigoSecreto===null ) { %>
                         <p class="pregunta"><strong>¿Quieres saber quien sera tu amigo secreto?</strong></p>
                         <button id="btn" class="btn button">OPRIME AQUI</button>
                         <% } else { %>
@@ -74,8 +74,7 @@
                                                             <script src="/js/perfil.js"></script>
                 </section>
             </main>
-            <script src="/js/perfil.js"></script>
-            <script src="/js/cache.js"></script>
+            <%- include("partials/script.ejs") %>
 
     </body>
 
