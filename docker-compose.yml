@@ -4,7 +4,7 @@ services:
     build: .
     ports:
       - 8000:3000
-    env_file: .env
+    env_file: .env.test
     command: npm start
     volumes:
       - .:/app
@@ -14,7 +14,7 @@ services:
     image: mysql:latest
     container_name: amigosecreto
     environment:
-      - MYSQ;_DATABASE
+      - MYSQL_DATABASE
       - MYSQL_ROOT_PASSWORD
       - MYSQL_USER
     command: --character-set-server=utf8
