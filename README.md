@@ -21,8 +21,8 @@ Después de clonar o descargar el proyecto debemos instalar las dependencias que
 
   `npm run dev`
   
-- Sino lo puedes revisar directamente en el siguiente link
-  `https://amigosecreto.onrender.com/`
+- Sino lo puedes revisar directamente en el siguiente link =>
+ https://amigosecreto.onrender.com/
   
 ## Funcionalidad
 
