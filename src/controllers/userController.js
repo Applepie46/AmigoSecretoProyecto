@@ -53,7 +53,6 @@ const userController = {
                 }
             })
                 .then(function (userLog) {
-                    console.log(userLog);
                     if (userLog) {
                         let contraseñaCorrecta = bcryptjs.compareSync(req.body.contrasenia, userLog.contrasenia)
                         if (contraseñaCorrecta) {
