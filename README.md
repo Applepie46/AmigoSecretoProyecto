@@ -1,5 +1,15 @@
 # AmigoSecretoProyecto
 
+## Notas iniciales
+
+Si deseas ver nuestro proyecto funcionando, este está desplegado en el siguiente enlace para que le des un vistazo:
+
+* https://amigosecreto.onrender.com/
+
+También contamos con un repositorio en DockerHub para que despliegues la aplicación en tu dispositivo:
+
+* https://hub.docker.com/repository/docker/emmanuelcd/amigosecretolineadirecta
+
 ## Que solucionamos con el proyecto?
 
 Con este proyecto solucionamos la construccion de equipos dinamicamente mediante el uso de javascript con node.js en el cual construimos endpoints los cuales participan en eventos como la renderizacion de vistas y el guardado de informacion con una conexion a base de datos 
@@ -20,9 +30,6 @@ Después de clonar o descargar el proyecto debemos instalar las dependencias que
 - Si quieres correr el proyecto por medio de la ayuda de la librería de nodemon para que al hacer un cambio en el código este se actualiza automáticamente usamos el siguiente comando =>
 
   `npm run dev`
-  
-- Sino lo puedes revisar directamente en el siguiente link =>
- https://amigosecreto.onrender.com/
   
 ## Funcionalidad
 
